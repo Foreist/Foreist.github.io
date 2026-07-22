@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Kim Taewoong · AI/NLP Researcher</title>
+<meta name="description" content="AI/NLP researcher. On-prem medical LLM serving (100+ concurrent users, hospital closed network). Kaggle Competitions Expert (top 0.7%).">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Kim Taewoong · AI/NLP Researcher">
+<meta property="og:description" content="On-prem medical LLM serving (100+ concurrent users). Kaggle Competitions Expert (top 0.7%), math-classification 3rd, AIMO2 silver.">
+<meta property="og:image" content="https://foreist.github.io/assets/profile.jpg">
+<meta property="og:url" content="https://foreist.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+<style>
+  :root{
+    color-scheme:light dark;
+    --accent:#4f46e5;--accent:light-dark(#4f46e5,#a5b4fc);
+    --accent-soft:#eef2ff;--accent-soft:light-dark(#eef2ff,#312e81);
+    --body:#f1f1f1;--body:light-dark(#f1f1f1,#0f0f10);
+    --surface:#ffffff;--surface:light-dark(#ffffff,#1b1b1c);
+    --fg:#171717;--fg:light-dark(#171717,#ededed);
+    --mut:#737373;--mut:light-dark(#737373,#a3a3a3);
+    --border:#e5e5e5;--border:light-dark(#e5e5e5,#2e2e30);
+    --chip:#f5f5f5;--chip:light-dark(#f5f5f5,#2a2a2c);
+    --gold:#b45309;--gold:light-dark(#b45309,#fbbf24);
+    --gold-bg:#fffbeb;--gold-bg:light-dark(#fffbeb,#3a2e10);
+    --r-card:14px;--r-el:9px;
+    --shadow:0 1px 2px light-dark(rgba(0,0,0,.05),rgba(0,0,0,.4)),0 4px 16px light-dark(rgba(0,0,0,.04),rgba(0,0,0,.25));
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--font);color:var(--fg);background:var(--body);
+    line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased;letter-spacing:-.1px}
+  .wrap{max-width:840px;margin:0 auto;padding:0 22px}
+  .hero-row{display:flex;gap:28px;align-items:center}
+  .avatar{flex:0 0 122px;width:122px;height:122px;border-radius:50%;overflow:hidden;
+    background:linear-gradient(135deg,var(--accent),#8b5cf6);color:#fff;display:grid;place-items:center;
+    font-size:38px;font-weight:800;border:1px solid var(--border);box-shadow:var(--shadow)}
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(1.09) contrast(1.03) saturate(1.03)}
+  @media(max-width:600px){.hero-row{flex-direction:column;gap:16px;text-align:center}
+    .avatar{width:104px;height:104px;flex-basis:104px}.stats{margin:24px auto 0}}
+  header{padding:56px 0 30px}
+  .kicker{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{margin:10px 0 4px;font-size:38px;font-weight:800;letter-spacing:-1.2px}
+  h1 small{font-size:15px;font-weight:400;color:var(--mut);margin-left:8px;letter-spacing:0}
+  .role{font-size:16.5px;font-weight:600}
+  .lead{color:var(--mut);margin:12px 0 0;max-width:660px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-el);padding:12px 14px;box-shadow:var(--shadow)}
+  .stat b{display:block;font-size:19px;font-weight:800;letter-spacing:-.5px}
+  .stat span{font-size:11.5px;color:var(--mut)}
+  main{padding:14px 0 64px}
+  section{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);padding:22px 26px;margin:14px 0;box-shadow:var(--shadow)}
+  h2{display:flex;align-items:center;gap:8px;font-size:12px;text-transform:uppercase;letter-spacing:1.6px;color:var(--accent);margin:0 0 16px;font-weight:700}
+  h2::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--accent)}
+  h3{font-size:17px;margin:0 0 2px;font-weight:700}
+  .meta{color:var(--mut);font-size:13px;margin-bottom:9px;font-weight:500}
+  ul{margin:8px 0 0;padding-left:18px}li{margin:5px 0}li::marker{color:var(--accent)}
+  .job{padding:17px 0;border-top:1px solid var(--border)}.job:first-of-type{border-top:0;padding-top:0}
+  .win{font-weight:600}.hl{color:var(--accent);font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+  .chip{background:var(--chip);border:1px solid var(--border);border-radius:var(--r-el);padding:3px 10px;font-size:12px}
+  .kg{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .rank{background:var(--gold-bg);color:var(--gold);border:1px solid var(--gold);font-weight:700;font-size:12px;padding:2px 10px;border-radius:20px;white-space:nowrap}
+  .certs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+  .certs figure{margin:0}
+  .certs img{width:100%;border:1px solid var(--border);border-radius:var(--r-el);box-shadow:var(--shadow);display:block}
+  .certs figcaption{font-size:12px;color:var(--mut);margin-top:6px;text-align:center}
+  .badge{display:inline-block;background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent);border-radius:20px;padding:3px 12px;font-size:13px;font-weight:600;text-decoration:none}
+  .btn{display:inline-block;margin-top:14px;background:var(--accent);color:#fff;border:none;border-radius:var(--r-el);padding:9px 17px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:var(--shadow)}
+  .btn:hover{filter:brightness(1.06)}
+  @media print{.btn{display:none}}
+  @media(max-width:600px){.certs{grid-template-columns:1fr}}
+  .skillrow{margin:9px 0;display:flex;gap:14px}
+  .skillrow b{flex:0 0 116px;color:var(--accent);font-weight:600;font-size:13px}
+  .skillrow span{flex:1}
+  code{background:var(--chip);border:1px solid var(--border);padding:1px 6px;border-radius:5px;font-size:12.5px}
+  a{color:var(--accent);text-decoration:none;font-weight:500}a:hover{text-decoration:underline}
+  .links{margin-top:10px;font-size:13.5px}.links a{margin-right:14px}
+  footer{color:var(--mut);font-size:12.5px;text-align:center;padding:6px 0 48px}
+  @media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}h1{font-size:31px}.skillrow{flex-direction:column;gap:2px}.skillrow b{flex:none}}
+  @media print{:root{color-scheme:light}body{background:#fff}section,.stat{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap hero-row">
+  <div class="avatar"><img src="assets/profile.jpg" alt="Kim Taewoong" onerror="this.replaceWith(document.createTextNode('KTW'))"></div>
+  <div>
+  <div class="kicker">AI / NLP Researcher · Medical LLM</div>
+  <h1>Kim Taewoong <small>김태웅</small></h1>
+  <div class="role">Medical LLM (Generative Medical Record) — research & on-prem serving</div>
+  <p class="lead">AI/NLP researcher who trains, quantizes, and serves a medical LLM used by <b>100+ concurrent users</b> — deployed to <b>hospital closed networks (on-premise)</b> where cloud APIs are not allowed. 2019.11–present (6+ yrs).</p>
+  <div class="links">
+    <a class="badge" href="https://www.kaggle.com/aleaiest" target="_blank">🏅 Kaggle Competitions Expert · top 0.7% (1,435 / 210,968)</a>
+  </div>
+  <div><button class="btn" onclick="window.print()">🖨 Print / Save as PDF</button></div>
+  <div class="stats">
+    <div class="stat"><b>24–80B</b><span>LLM sizes I deploy (params)</span></div>
+    <div class="stat"><b>3rd<span style="font-weight:400"> /338</span></b><span>Kaggle · math NLP</span></div>
+    <div class="stat"><b>🥈 Silver</b><span>AIMO2 · 87/2212</span></div>
+  </div>
+  </div>
+</div></header>
+
+<main class="wrap">
+
+<section>
+  <h2>Summary</h2>
+  <ul>
+    <li><b>On-premise medical LLM serving — 100+ concurrent users inside hospital closed networks (self-hosted GPU).</b> Cloud APIs are banned in hospitals, so the full train→quantize→serve loop runs on-prem. Core differentiator.</li>
+    <li>End-to-end LLM: fine-tuning (SFT·LoRA, RL: DPO/GRPO), quantization (GPTQ/AWQ/W4A16), vLLM serving; multi-GPU training up to H200×8, serving 24B–80B models.</li>
+    <li>Kaggle (solo): math-problem classification <span class="hl">3rd / 338</span>, AIMO Progress Prize 2 <span class="hl">Silver (87 / 2212)</span>. Competitions Expert (top 0.7%).</li>
+    <li>Consistent medical-domain track: Korean medical NLP → precision-medicine R&amp;D → medical LLM (6+ yrs).</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Experience</h2>
+  <div class="job">
+    <h3>Puzzle AI — AI / NLP Researcher</h3>
+    <div class="meta">Nov 2019 – Present · 6+ yrs</div>
+    <p class="win">Owns training, quantization and <span class="hl">on-premise serving</span> of a medical LLM (Generative Medical Record) — <span class="hl">100+ concurrent users, deployed inside hospital closed networks</span> (cloud not allowed).</p>
+    <ul>
+      <li><b>On-prem serving</b> — LLM on hospital closed-network / self-hosted GPU, <b>dual-server round-robin HA for 100+ concurrent users</b> (key strength)</li>
+      <li>Fine-tuning of Gemma 2/3/4 · Qwen · GPT-OSS (LoRA, RL: DPO/GRPO); multi-GPU training up to <b>H200×8</b>, served <b>24B–80B</b> models to GPU budgets</li>
+      <li>Quantization (GPTQ/AWQ/W4A16) for speed &amp; VRAM — solved Gemma-4 AWQ (no official recipe), ~2.5× inference speed</li>
+      <li>vLLM serving &amp; reproducibility debugging; stabilized structured (JSON) output via GBNF constrained decoding; serving image build 30 min → 11 s</li>
+      <li>GMR backend (FastAPI + vLLM) — multiple clinical-document summarization APIs (surgery / admission / discharge), map-reduce long-document summarization &amp; generation-repetition control, standardized router error-code spec</li>
+      <li>Asan / Chungnam Nat'l Univ. hospital pipelines (SOAP · discharge · surgery records); <b>fine-tuned an LLM on 5 years of surgery records (A6000, on-prem)</b>; on-site demos</li>
+      <li><b>Introduced &amp; established vLLM</b> as the team's LLM serving stack (structured output, serving image, quantized serving); upgraded embedding &amp; reranker models (separate KO/EN embeddings) for retrieval quality</li>
+      <li>Earlier (2019.11–2024): Korean medical NLP → precision-medicine R&amp;D (variant / survival analysis, symptom extraction)</li>
+    </ul>
+    <div class="chips"><span class="chip">Python</span><span class="chip">Gemma/Qwen/GPT-OSS</span><span class="chip">LoRA · DPO/GRPO</span><span class="chip">GPTQ · AWQ · W4A16</span><span class="chip">vLLM</span><span class="chip">FastAPI</span><span class="chip">On-prem</span></div>
+    <p class="meta" style="margin-top:13px">Open source: reported 4 Gemma-related bugs to vLLM · SGLang · llm-compressor</p>
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <div class="job">
+    <h3>Beauty / Health AI Product (side project)</h3>
+    <div class="meta">2024 – present</div>
+    <p class="win">Drove development of a beauty/health AI product — shipped features like a real-time voice assistant, scalp/skin-diagnosis CV, and on-device shorts auto-generation; owned spec &amp; review while <b>AI coding agents</b> did most of the implementation.</p>
+    <ul>
+      <li>Real-time <b>ambient voice assistant</b> (OpenAI Realtime API, WebSocket) — live STT / translation, sentence-boundary &amp; endpoint tuning</li>
+      <li><b>Scalp diagnosis CV</b> — reproduced ScalpVision (macro-F1 <span class="hl">0.744</span> &gt; paper 0.689)</li>
+      <li><b>Facial skin diagnosis (8 attributes)</b> — per-attribute ConvNeXt-Tiny + <b>CORAL ordinal</b> models on dermatologist-graded data (AI-Hub, 1,072 subjects / ~14k images); deployment MAE <b>~0.49</b>, <b>~94% within ±1 grade</b></li>
+      <li>Aligned train/inference crops with MediaPipe landmarks for deployment accuracy → shipped <b>8 ONNX models on-device</b></li>
+      <li><b>On-device shorts auto-generation &amp; rendering</b> — generation-progress UI, dynamic editing (fade-out, frozen-frame trim, segment clamping), background music, session persistence</li>
+      <li>CRM / admin dashboards, QR login &amp; session management, camera face-warp filters, face-similarity, casual games (Bubble Pop, Beauty Merge)</li>
+    </ul>
+    <div class="chips"><span class="chip">AI agents</span><span class="chip">OpenAI Realtime</span><span class="chip">PyTorch</span><span class="chip">ffmpeg</span></div>
+  </div>
+  <div class="job">
+    <h3>Conversational AI Service (side project)</h3>
+    <div class="meta">May 2023 – Jan 2024 · 9 mo</div>
+    <p class="win">Sole AI / ML engineer on a multi-modal conversational AI service — designed, built and shipped the entire AI feature set (emotion analysis, voice / video generation, NLP tooling).</p>
+    <ul>
+      <li><b>Emotion classifier</b> — hand-labeled ~1,500 samples myself, KoELECTRA 7-class, <span class="hl">0.06 s CPU inference</span>; Optuna search</li>
+      <li><b>Multi-modal AI</b> — TTS / voice-cloning, talking-head video, image captioning, speech enhancement, image generation (API integration + tuning)</li>
+      <li><b>NLP tooling</b> — repetition avoidance via embedding similarity, profanity / text moderation, sentence splitting</li>
+      <li>Multi-stage character-creation prompt engineering; closed beta (27 users) data analysis; end-to-end service QA &amp; release testing</li>
+    </ul>
+    <div class="chips"><span class="chip">KoELECTRA</span><span class="chip">multi-modal AI</span><span class="chip">prompt engineering</span><span class="chip">data labeling</span><span class="chip">QA</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Competitions · Kaggle (solo)</h2>
+  <p><a class="badge" href="https://www.kaggle.com/aleaiest" target="_blank">Kaggle Competitions Expert</a> — top <span class="hl">0.7%</span> worldwide · 1,435 / 210,968</p>
+  <div class="job">
+    <div class="kg"><h3>KAChallenges: Classifying Math Problems</h3><span class="rank">3rd / 338</span></div>
+    <div class="meta">May 2025 · 8-topic math-problem classification (NLP)</div>
+    <ul><li>Reframed generative classification as constrained decoding — a Logits Processor restricts output to label tokens, with temperature=0 · max_tokens=1 (single deterministic token) to eliminate format errors. Qwen3-32B / Qwen2.5-32B-AWQ on vLLM + 32B domain fine-tuning.</li></ul>
+    <p class="meta" style="margin-top:8px"><a href="https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution" target="_blank">→ Official 3rd-place solution writeup</a></p>
+  </div>
+  <div class="job">
+    <div class="kg"><h3>AIMO Progress Prize 2</h3><span class="rank">🥈 Silver · 87 / 2212</span></div>
+    <div class="meta">Nov 2024 – Mar 2025 · olympiad-level math reasoning</div>
+    <ul><li>Fine-tuned DeepSeek-R1-Distill-Qwen-7B, then AWQ-quantized; vLLM batch inference. Multi-sample per question → majority-vote self-consistency; token-budget management to maximize samples within the time limit.</li></ul>
+  </div>
+  <p class="meta">Also participated in Eedi · Nemotron · Deep Past and other LLM inference-optimization competitions</p>
+  <div class="certs">
+    <figure><a href="assets/kac-cert.pdf" target="_blank"><img src="assets/kac-cert.jpg" alt="KAUST Academy certificate — 3rd/338" loading="lazy"></a><figcaption>KAUST Academy — 3rd / 338 (click for PDF)</figcaption></figure>
+    <figure><img src="assets/aimo2-silver.jpg" alt="Kaggle AIMO2 Silver Medal" loading="lazy"><figcaption>Kaggle — AIMO2 Silver, 87 / 2212</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skillrow"><b>Language</b><span>Python</span></div>
+  <div class="skillrow"><b>LLM / GenAI</b><span>Fine-tuning &amp; training (SFT·LoRA), RL (DPO/GRPO) experience, quantization (GPTQ/AWQ/W4A16), vLLM serving &amp; on-prem deployment, structured (JSON) output fixes, RAG · retrieval (embedding search · reranking)</span></div>
+  <div class="skillrow"><b>NLP / CV / Data</b><span>Korean medical text processing/classification · PyTorch image-classification model training &amp; paper reproduction · data analysis (pandas) &amp; labeling</span></div>
+  <div class="skillrow"><b>Serving / Infra</b><span>vLLM · FastAPI, Docker, Kubernetes / Ceph (rook), <b>on-prem (closed-network) GPU serving</b>, W&amp;B</span></div>
+  <div class="skillrow"><b>AI agents</b><span><b>Highly proficient with AI coding agents (Claude, GPT/Codex)</b> — drives large-scale implementation via agents while owning spec, architecture, review &amp; verification. (Puzzle AI early/mid code, Kaggle solutions, data labeling &amp; model training are all done by hand.)</span></div>
+</section>
+
+<section>
+  <h2>Community · Leadership</h2>
+  <div class="job">
+    <h3>learnup study group — Organizer/Leader <span style="font-weight:400;color:var(--mut);font-size:14px">· Somoim app</span></h3>
+    <div class="meta">2025 – 2026 · 1-year milestone Jan 30, 2026</div>
+    <ul><li>Grew and sustained a 50+ member group for over a year; ran daily in-person meetups (after-work cafe), owning scheduling, venue &amp; facilitation</li></ul>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="skillrow"><b>Education</b><span>—</span></div>
+</section>
+
+<section>
+  <h2>Links</h2>
+  <div class="skillrow"><b>Kaggle</b><span><a href="https://www.kaggle.com/aleaiest" target="_blank">kaggle.com/aleaiest</a></span></div>
+  <div class="skillrow"><b>Hugging Face</b><span><a href="https://huggingface.co/qwertist" target="_blank">huggingface.co/qwertist</a></span></div>
+  <div class="skillrow"><b>Email</b><span><a href="mailto:dxodnd@gmail.com">dxodnd@gmail.com</a></span></div>
+</section>
+
+</main>
+<footer>© 2026 Kim Taewoong · AI/NLP Researcher · design tokens inspired by Meta Astryx</footer>
+</body>
+</html>
