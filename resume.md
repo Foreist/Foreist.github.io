@@ -2,7 +2,7 @@
 
 **Medical LLM (Generative Medical Record) — research & on-premise serving**
 AI/NLP researcher who trains, quantizes, and serves a medical LLM used by **100+ concurrent users**, deployed to **hospital closed networks (on-premise)** where cloud APIs are not allowed. 2019.11–present (6+ yrs).
-🏅 **Kaggle Competitions Expert · top 0.7% (1,435 / 210,968)**
+🏅 **Kaggle Competitions Expert · top 0.7% worldwide**
 
 ---
 
@@ -51,7 +51,7 @@ AI/ML engineer on a multi-modal conversational AI service — built and shipped 
 ---
 
 ## Competitions · Kaggle (solo)
-**Competitions Expert — top 0.7% worldwide (1,435 / 210,968)**
+**Competitions Expert — top 0.7% worldwide**
 
 ### KAChallenges: Classifying Math Problems — 3rd / 338 · May 2025
 8-topic math-problem classification (NLP). Reframed generative classification as **constrained decoding** — a Logits Processor restricts output to label tokens, with temperature=0 · max_tokens=1 (single deterministic token) to eliminate format errors. Qwen3-32B / Qwen2.5-32B-AWQ on vLLM + 32B domain fine-tuning. → [Official 3rd-place solution writeup](https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution)
