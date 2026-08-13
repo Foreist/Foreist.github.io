@@ -42,7 +42,7 @@ Drove development of a beauty/health AI product — shipped a real-time voice as
 - CRM / admin dashboards, QR login & session management, camera face-warp filters, face-similarity, casual games (Bubble Pop, Beauty Merge)
 
 ### Conversational AI Service (side project) · May 2023 – Jan 2024
-Sole AI/ML engineer on a multi-modal conversational AI service — designed, built and shipped the entire AI feature set (emotion analysis, voice/video generation, NLP tooling).
+AI/ML engineer on a multi-modal conversational AI service — built and shipped AI features (emotion analysis, voice/video generation, NLP tooling).
 - **Emotion classifier** — hand-labeled ~1,500 samples myself, KoELECTRA 7-class, **0.06 s CPU inference**; Optuna search
 - **Multi-modal AI** — TTS / voice-cloning, talking-head video, image captioning, speech enhancement, image generation (API integration + tuning)
 - **NLP tooling** — repetition avoidance via embedding similarity, profanity / text moderation, sentence splitting
