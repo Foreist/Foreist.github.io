@@ -46,7 +46,7 @@ Sole AI/ML engineer on a multi-modal conversational AI service — designed, bui
 - **Emotion classifier** — hand-labeled ~1,500 samples myself, KoELECTRA 7-class, **0.06 s CPU inference**; Optuna search
 - **Multi-modal AI** — TTS / voice-cloning, talking-head video, image captioning, speech enhancement, image generation (API integration + tuning)
 - **NLP tooling** — repetition avoidance via embedding similarity, profanity / text moderation, sentence splitting
-- Multi-stage character-creation prompt engineering; closed beta (27 users) data analysis; end-to-end service QA & release testing
+- Multi-stage character-creation prompt engineering; closed beta (100 users) data analysis; end-to-end service QA & release testing
 
 ---
 
