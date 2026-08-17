@@ -77,7 +77,7 @@ Olympiad-level math reasoning. Fine-tuned DeepSeek-R1-Distill-Qwen-7B, then AWQ-
 ---
 
 ## Community · Leadership
-**learnup study group — Organizer/Leader** (Somoim app), 2025 – 2026 (1-year milestone Jan 30, 2026). Grew and sustained a 50+ member group for over a year; ran daily in-person meetups (after-work cafe), owning scheduling, venue & facilitation.
+**learnup study group — Organizer/Leader** (Somoim app), Feb 2025 – Apr 2026 (1-year milestone Jan 30, 2026). Grew and sustained a 50+ member group for over a year; ran daily in-person meetups (after-work cafe), owning scheduling, venue & facilitation.
 
 ## Education
 —
