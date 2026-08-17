@@ -9,7 +9,7 @@ AI/NLP researcher who trains, quantizes, and serves a medical LLM used by **100+
 ## Summary
 - **On-premise medical LLM serving — 100+ concurrent users inside hospital closed networks (self-hosted GPU).** Cloud APIs are banned in hospitals, so the full train→quantize→serve loop runs on-prem. Core differentiator.
 - End-to-end LLM: fine-tuning (SFT·LoRA, RL: DPO/GRPO), quantization (GPTQ/AWQ/W4A16), vLLM serving; multi-GPU training up to H200×8, serving 24B–80B models.
-- Kaggle (solo): math-problem classification **3rd / 338**, AIMO Progress Prize 2 **Silver (87 / 2212)**. Competitions Expert (top 0.7%).
+- Kaggle (solo): math-problem classification **3rd / 338**, AIMO Progress Prize 2 **Silver (87 / 2212)**. Competitions Expert (top 0.7%). Zindi: satellite-imagery pond detection **13th / 610**.
 - Consistent medical-domain track: Korean medical NLP → precision-medicine R&D → medical LLM.
 
 ---
@@ -50,8 +50,11 @@ AI/ML engineer on a multi-modal conversational AI service — built and shipped 
 
 ---
 
-## Competitions · Kaggle (solo)
-**Competitions Expert — top 0.7% worldwide**
+## Competitions (solo)
+**Kaggle Competitions Expert — top 0.7% worldwide**
+
+### GeoAI Aquaculture Pond Identification (Zindi · FAO/ITU) — 13th / 610 · Aug 2026
+Aquaculture-pond detection from 12-month Sentinel-1/2 satellite time series; train and test come from different regions & seasons (domain shift), metric 0.4·AUC + 0.6·F1. In-domain CV was blind to the shift, so validated directly on the board: **test-time self-training** (pseudo-labels on unlabeled test rows) over a LightGBM stack with pretrained remote-sensing embeddings (Galileo · Presto) raised the public score **0.916 → 0.941**; picked the two final submissions for variance, not rank — survived the private shakeup, public 17th → **private 13th**.
 
 ### KAChallenges: Classifying Math Problems — 3rd / 338 · May 2025
 8-topic math-problem classification (NLP). Reframed generative classification as **constrained decoding** — a Logits Processor restricts output to label tokens, with temperature=0 · max_tokens=1 (single deterministic token) to eliminate format errors. Qwen3-32B / Qwen2.5-32B-AWQ on vLLM + 32B domain fine-tuning. → [Official 3rd-place solution writeup](https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution)

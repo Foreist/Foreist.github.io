@@ -114,7 +114,7 @@
   <ul>
     <li><b>On-premise medical LLM serving — 100+ concurrent users inside hospital closed networks (self-hosted GPU).</b> Cloud APIs are banned in hospitals, so the full train→quantize→serve loop runs on-prem. Core differentiator.</li>
     <li>End-to-end LLM: fine-tuning (SFT·LoRA, RL: DPO/GRPO), quantization (GPTQ/AWQ/W4A16), vLLM serving; multi-GPU training up to H200×8, serving 24B–80B models.</li>
-    <li>Kaggle (solo): math-problem classification <span class="hl">3rd / 338</span>, AIMO Progress Prize 2 <span class="hl">Silver (87 / 2212)</span>. Competitions Expert (top 0.7%).</li>
+    <li>Kaggle (solo): math-problem classification <span class="hl">3rd / 338</span>, AIMO Progress Prize 2 <span class="hl">Silver (87 / 2212)</span>. Competitions Expert (top 0.7%). Zindi: satellite-imagery pond detection <span class="hl">13th / 610</span>.</li>
     <li>Consistent medical-domain track: Korean medical NLP → precision-medicine R&amp;D → medical LLM (6+ yrs).</li>
   </ul>
 </section>
@@ -171,8 +171,13 @@
 </section>
 
 <section>
-  <h2>Competitions · Kaggle (solo)</h2>
+  <h2>Competitions (solo)</h2>
   <p><a class="badge" href="https://www.kaggle.com/aleaiest" target="_blank">Kaggle Competitions Expert</a> — top <span class="hl">0.7%</span> worldwide</p>
+  <div class="job">
+    <div class="kg"><h3>GeoAI Aquaculture Pond Identification (Zindi · FAO/ITU)</h3><span class="rank">13th / 610</span></div>
+    <div class="meta">Aug 2026 · aquaculture-pond detection from Sentinel-1/2 satellite time series</div>
+    <ul><li>12-month Sentinel-1/2 time series with train/test from different regions &amp; seasons (domain shift; metric 0.4·AUC + 0.6·F1). In-domain CV was blind to the shift, so validated directly on the board: test-time self-training (pseudo-labels on unlabeled test rows) over a LightGBM stack with pretrained remote-sensing embeddings (Galileo · Presto) raised the public score 0.916 → 0.941; picked the two final submissions for variance, not rank — survived the private shakeup, public 17th → private 13th.</li></ul>
+  </div>
   <div class="job">
     <div class="kg"><h3>KAChallenges: Classifying Math Problems</h3><span class="rank">3rd / 338</span></div>
     <div class="meta">May 2025 · 8-topic math-problem classification (NLP)</div>
