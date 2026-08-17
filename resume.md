@@ -83,4 +83,4 @@ Olympiad-level math reasoning. Fine-tuned DeepSeek-R1-Distill-Qwen-7B, then AWQ-
 —
 
 ## Links
-Kaggle [kaggle.com/aleaiest](https://www.kaggle.com/aleaiest) · Hugging Face [huggingface.co/qwertist](https://huggingface.co/qwertist) · Email dxodnd@gmail.com
+Kaggle [kaggle.com/aleaiest](https://www.kaggle.com/aleaiest) · Zindi [zindi.africa/users/Foreist](https://zindi.africa/users/Foreist) · Hugging Face [huggingface.co/qwertist](https://huggingface.co/qwertist) · Email dxodnd@gmail.com
