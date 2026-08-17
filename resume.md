@@ -32,7 +32,7 @@ Owns training, quantization and **on-premise serving** of a medical LLM (Generat
 
 ## Projects
 
-### Beauty / Health AI Product (side project) · 2024 – present
+### Beauty / Health AI Product (side project) · Sep 2025 – present
 Drove development of a beauty/health AI product — shipped a real-time voice assistant, scalp/skin-diagnosis CV, and on-device shorts auto-generation; owned spec & review while **AI coding agents** did most of the implementation.
 - Real-time **ambient voice assistant** (OpenAI Realtime API, WebSocket) — live STT / translation, sentence-boundary & endpoint tuning
 - **Scalp diagnosis CV** — reproduced ScalpVision (macro-F1 **0.744** > paper 0.689)
