@@ -9,7 +9,7 @@ AI/NLP researcher who trains, quantizes, and serves a medical LLM used by **100+
 ## Summary
 - **On-premise medical LLM serving — 100+ concurrent users inside hospital closed networks (self-hosted GPU).** Cloud APIs are banned in hospitals, so the full train→quantize→serve loop runs on-prem. Core differentiator.
 - End-to-end LLM: fine-tuning (SFT·LoRA, RL: DPO/GRPO), quantization (GPTQ/AWQ/W4A16), vLLM serving; multi-GPU training up to H200×8, serving 24B–80B models.
-- Kaggle (solo): math-problem classification **3rd / 338**, AIMO Progress Prize 2 **Silver (87 / 2212)**. Competitions Expert (top 0.7%). Zindi: satellite-imagery pond detection **13th / 610**.
+- Kaggle Competitions Expert (**top 0.7%** worldwide) — math-problem classification **3rd**, AIMO Progress Prize 2 **Silver**, ARC Prize 2024 **Bronze**. Zindi · FAO/ITU satellite pond detection **13th**.
 - Consistent medical-domain track: Korean medical NLP → precision-medicine R&D → medical LLM.
 
 ---
@@ -18,14 +18,16 @@ AI/NLP researcher who trains, quantizes, and serves a medical LLM used by **100+
 
 ### Puzzle AI — AI / NLP Researcher · Nov 2019 – Present (6+ yrs)
 Owns training, quantization and **on-premise serving** of a medical LLM (Generative Medical Record) — **100+ concurrent users, deployed inside hospital closed networks** (cloud not allowed).
-- On-prem serving — LLM on hospital closed-network / self-hosted GPU, **dual-server round-robin HA for 100+ concurrent users** (key strength)
+- On-prem serving — LLM on hospital closed-network / self-hosted GPU, **redundant dual-server setup for 100+ concurrent users** (key strength)
 - Fine-tuning of Gemma 2/3/4 · Qwen · GPT-OSS (LoRA, RL: DPO/GRPO); multi-GPU training up to **H200×8**, served **24B–80B** models to GPU budgets
 - Quantization (GPTQ/AWQ/W4A16) for speed & VRAM — solved Gemma-4 AWQ (no official recipe), ~2.5× inference speed
 - vLLM serving & reproducibility debugging; stabilized structured (JSON) output via GBNF constrained decoding; serving image build 30 min → 11 s
 - GMR backend (FastAPI + vLLM) — multiple clinical-document summarization APIs (surgery / admission / discharge), map-reduce long-document summarization & generation-repetition control, standardized router error-code spec
 - Asan / Chungnam Nat'l Univ. hospital pipelines (SOAP · discharge · surgery records); **fine-tuned an LLM on 5 years of surgery records (A6000, on-prem)**; on-site demos
 - **Introduced & established vLLM** as the team's LLM serving stack (structured output, serving image, quantized serving); upgraded embedding & reranker models (separate KO/EN embeddings) for retrieval quality
-- Earlier (2019.11–2024): Korean medical NLP → precision-medicine R&D (variant / survival analysis, symptom extraction)
+- **CDSS with a small LLM** (2023.10–2024.12) — clinical decision support for hospital use: generated & labeled training data with GPT, fine-tuned an open LLM, converted for on-prem deployment
+- **Precision-medicine R&D** (2020.11–2023.02, with St. Mary's Hospital) — blood-cancer mutation research: literature survey, data collection, preprocessing, analysis and modeling
+- Earlier (2019.11–2020): Korean medical NLP — symptom extraction and medical text classification
 - Open source: reported 4 Gemma-related bugs to vLLM · SGLang · llm-compressor
 
 ---
@@ -34,16 +36,15 @@ Owns training, quantization and **on-premise serving** of a medical LLM (Generat
 
 ### Beauty / Health AI Product (side project) · Sep 2025 – present
 Drove development of a beauty/health AI product — shipped a real-time voice assistant, scalp/skin-diagnosis CV, and on-device shorts auto-generation; owned spec & review while **AI coding agents** did most of the implementation.
-- Real-time **ambient voice assistant** (OpenAI Realtime API, WebSocket) — live STT / translation, sentence-boundary & endpoint tuning
-- **Scalp diagnosis CV** — reproduced ScalpVision (macro-F1 **0.744** > paper 0.689)
-- **Facial skin diagnosis (8 attributes)** — per-attribute ConvNeXt-Tiny + **CORAL ordinal** models on dermatologist-graded data (AI-Hub, 1,072 subjects / ~14k images); deployment MAE **~0.49**, **~94% within ±1 grade**
-- Aligned train/inference crops with MediaPipe landmarks for deployment accuracy → shipped **8 ONNX models on-device**
+- Real-time **ambient voice assistant** — live STT / translation, sentence-boundary & endpoint tuning
+- **Scalp diagnosis CV** — reproduced a published benchmark and beat it (macro-F1 **0.744** vs 0.689)
+- **Facial skin diagnosis (8 attributes)** — per-attribute ordinal-grading models; deployment MAE **~0.49**, **~94% within ±1 grade**
+- Tuned train/inference preprocessing for deployment accuracy → shipped **8 models on-device**
 - **On-device shorts auto-generation & rendering** — generation-progress UI, dynamic editing (fade-out, frozen-frame trim, segment clamping), background music, session persistence
-- CRM / admin dashboards, QR login & session management, camera face-warp filters, face-similarity, casual games (Bubble Pop, Beauty Merge)
 
 ### Conversational AI Service (side project) · May 2023 – Jan 2024
 AI/ML engineer on a multi-modal conversational AI service — built and shipped AI features (emotion analysis, voice/video generation, NLP tooling).
-- **Emotion classifier** — hand-labeled ~1,500 samples myself, KoELECTRA 7-class, **0.06 s CPU inference**; Optuna search
+- **Emotion classifier** — hand-labeled ~1,500 samples myself, 7-class, **0.06 s CPU inference**; hyperparameter search
 - **Multi-modal AI** — TTS / voice-cloning, talking-head video, image captioning, speech enhancement, image generation (API integration + tuning)
 - **NLP tooling** — repetition avoidance via embedding similarity, profanity / text moderation, sentence splitting
 - Multi-stage character-creation prompt engineering; closed beta (100 users) data analysis; end-to-end service QA & release testing
@@ -51,19 +52,14 @@ AI/ML engineer on a multi-modal conversational AI service — built and shipped 
 ---
 
 ## Competitions (solo)
-**Kaggle Competitions Expert — top 0.7% worldwide**
 
-### GeoAI Aquaculture Pond Identification (Zindi · FAO/ITU) — 13th / 610 · Aug 2026
-Aquaculture-pond detection from 12-month Sentinel-1/2 satellite time series; train and test come from different regions & seasons (domain shift), metric 0.4·AUC + 0.6·F1. In-domain CV was blind to the shift, so validated directly on the board: **test-time self-training** (pseudo-labels on unlabeled test rows) over a LightGBM stack with pretrained remote-sensing embeddings (Galileo · Presto) raised the public score **0.916 → 0.941**; picked the two final submissions for variance, not rank — survived the private shakeup, public 17th → **private 13th**.
-
-### KAChallenges: Classifying Math Problems — 3rd / 338 · May 2025
-8-topic math-problem classification (NLP). Reframed generative classification as **constrained decoding** — a Logits Processor restricts output to label tokens, with temperature=0 · max_tokens=1 (single deterministic token) to eliminate format errors. Qwen3-32B / Qwen2.5-32B-AWQ on vLLM + 32B domain fine-tuning. → [Official 3rd-place solution writeup](https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution)
-
-### AIMO Progress Prize 2 — Silver, 87 / 2212 · Nov 2024 – Mar 2025
-Olympiad-level math reasoning. Fine-tuned DeepSeek-R1-Distill-Qwen-7B, then AWQ-quantized; vLLM batch inference. Multi-sample per question → majority-vote self-consistency; token-budget management to maximize samples within the time limit.
+- **Kaggle Competitions Expert · top 0.7% worldwide**
+  - **Kaggle math-problem classification — 3rd place** (May 2025). Reframed generative classification as **constrained decoding** — a Logits Processor restricts output to label tokens, temperature=0 · max_tokens=1, eliminating format errors. → [Official 3rd-place solution writeup](https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution)
+  - **Kaggle AIMO Progress Prize 2 — Silver medal** (Mar 2025). Fine-tuned and quantized a reasoning model for batch inference; multi-sample majority-vote self-consistency under a strict token budget.
+  - **Kaggle ARC Prize 2024 — Bronze medal** (Nov 2024). Abstract reasoning on unseen tasks.
+- **Zindi · FAO/ITU satellite aquaculture-pond detection — 13th place** (Aug 2026). Heavy domain shift between train and test, so I validated directly on the leaderboard: **test-time self-training** raised the public score **0.916 → 0.941**, and picking final submissions for variance rather than rank survived the private shakeup.
 
 *Also: Eedi · Nemotron · Deep Past and other LLM inference-optimization competitions.*
-*Official certificates: KAUST Academy (3rd/338), Kaggle (AIMO2 Silver).*
 
 ---
 
