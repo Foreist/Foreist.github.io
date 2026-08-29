@@ -114,7 +114,7 @@
   <ul>
     <li><b>On-premise medical LLM serving — 100+ concurrent users inside hospital closed networks (self-hosted GPU).</b> Cloud APIs are banned in hospitals, so the full train→quantize→serve loop runs on-prem. Core differentiator.</li>
     <li>End-to-end LLM: fine-tuning (SFT·LoRA, RL: DPO/GRPO), quantization (GPTQ/AWQ/W4A16), vLLM serving; multi-GPU training up to H200×8, serving 24B–80B models.</li>
-    <li>Kaggle (solo): math-problem classification <span class="hl">3rd / 338</span>, AIMO Progress Prize 2 <span class="hl">Silver (87 / 2212)</span>. Competitions Expert (top 0.7%). Zindi: satellite-imagery pond detection <span class="hl">13th / 610</span>.</li>
+    <li>Kaggle Competitions Expert (<span class="hl">top 0.7%</span> worldwide) — math-problem classification <span class="hl">3rd</span>, AIMO Progress Prize 2 <span class="hl">Silver</span>, ARC Prize 2024 <span class="hl">Bronze</span>. Zindi · FAO/ITU satellite pond detection <span class="hl">13th</span>.</li>
     <li>Consistent medical-domain track: Korean medical NLP → precision-medicine R&amp;D → medical LLM (6+ yrs).</li>
   </ul>
 </section>
@@ -126,14 +126,16 @@
     <div class="meta">Nov 2019 – Present · 6+ yrs</div>
     <p class="win">Owns training, quantization and <span class="hl">on-premise serving</span> of a medical LLM (Generative Medical Record) — <span class="hl">100+ concurrent users, deployed inside hospital closed networks</span> (cloud not allowed).</p>
     <ul>
-      <li><b>On-prem serving</b> — LLM on hospital closed-network / self-hosted GPU, <b>dual-server round-robin HA for 100+ concurrent users</b> (key strength)</li>
+      <li><b>On-prem serving</b> — LLM on hospital closed-network / self-hosted GPU, <b>redundant dual-server setup for 100+ concurrent users</b> (key strength)</li>
       <li>Fine-tuning of Gemma 2/3/4 · Qwen · GPT-OSS (LoRA, RL: DPO/GRPO); multi-GPU training up to <b>H200×8</b>, served <b>24B–80B</b> models to GPU budgets</li>
       <li>Quantization (GPTQ/AWQ/W4A16) for speed &amp; VRAM — solved Gemma-4 AWQ (no official recipe), ~2.5× inference speed</li>
       <li>vLLM serving &amp; reproducibility debugging; stabilized structured (JSON) output via GBNF constrained decoding; serving image build 30 min → 11 s</li>
       <li>GMR backend (FastAPI + vLLM) — multiple clinical-document summarization APIs (surgery / admission / discharge), map-reduce long-document summarization &amp; generation-repetition control, standardized router error-code spec</li>
       <li>Asan / Chungnam Nat'l Univ. hospital pipelines (SOAP · discharge · surgery records); <b>fine-tuned an LLM on 5 years of surgery records (A6000, on-prem)</b>; on-site demos</li>
       <li><b>Introduced &amp; established vLLM</b> as the team's LLM serving stack (structured output, serving image, quantized serving); upgraded embedding &amp; reranker models (separate KO/EN embeddings) for retrieval quality</li>
-      <li>Earlier (2019.11–2024): Korean medical NLP → precision-medicine R&amp;D (variant / survival analysis, symptom extraction)</li>
+      <li><b>CDSS with a small LLM</b> (2023.10–2024.12) — clinical decision support for hospital use: generated &amp; labeled training data with GPT, fine-tuned an open LLM, converted for on-prem deployment</li>
+      <li><b>Precision-medicine R&amp;D</b> (2020.11–2023.02, with St. Mary's Hospital) — blood-cancer mutation research: literature survey, data collection, preprocessing, analysis and modeling</li>
+      <li>Earlier (2019.11–2020): Korean medical NLP — symptom extraction and medical text classification</li>
     </ul>
     <div class="chips"><span class="chip">Python</span><span class="chip">Gemma/Qwen/GPT-OSS</span><span class="chip">LoRA · DPO/GRPO</span><span class="chip">GPTQ · AWQ · W4A16</span><span class="chip">vLLM</span><span class="chip">FastAPI</span><span class="chip">On-prem</span></div>
     <p class="meta" style="margin-top:13px">Open source: reported 4 Gemma-related bugs to vLLM · SGLang · llm-compressor</p>
@@ -147,57 +149,51 @@
     <div class="meta">Sep 2025 – present</div>
     <p class="win">Drove development of a beauty/health AI product — shipped features like a real-time voice assistant, scalp/skin-diagnosis CV, and on-device shorts auto-generation; owned spec &amp; review while <b>AI coding agents</b> did most of the implementation.</p>
     <ul>
-      <li>Real-time <b>ambient voice assistant</b> (OpenAI Realtime API, WebSocket) — live STT / translation, sentence-boundary &amp; endpoint tuning</li>
-      <li><b>Scalp diagnosis CV</b> — reproduced ScalpVision (macro-F1 <span class="hl">0.744</span> &gt; paper 0.689)</li>
-      <li><b>Facial skin diagnosis (8 attributes)</b> — per-attribute ConvNeXt-Tiny + <b>CORAL ordinal</b> models on dermatologist-graded data (AI-Hub, 1,072 subjects / ~14k images); deployment MAE <b>~0.49</b>, <b>~94% within ±1 grade</b></li>
-      <li>Aligned train/inference crops with MediaPipe landmarks for deployment accuracy → shipped <b>8 ONNX models on-device</b></li>
+      <li>Real-time <b>ambient voice assistant</b> — live STT / translation, sentence-boundary &amp; endpoint tuning</li>
+      <li><b>Scalp diagnosis CV</b> — reproduced a published benchmark and beat it (macro-F1 <span class="hl">0.744</span> vs 0.689)</li>
+      <li><b>Facial skin diagnosis (8 attributes)</b> — per-attribute ordinal-grading models; deployment MAE <b>~0.49</b>, <b>~94% within ±1 grade</b></li>
+      <li>Tuned train/inference preprocessing for deployment accuracy → shipped <b>8 models on-device</b></li>
       <li><b>On-device shorts auto-generation &amp; rendering</b> — generation-progress UI, dynamic editing (fade-out, frozen-frame trim, segment clamping), background music, session persistence</li>
-      <li>CRM / admin dashboards, QR login &amp; session management, camera face-warp filters, face-similarity, casual games (Bubble Pop, Beauty Merge)</li>
     </ul>
-    <div class="chips"><span class="chip">AI agents</span><span class="chip">OpenAI Realtime</span><span class="chip">PyTorch</span><span class="chip">ffmpeg</span></div>
+    <div class="chips"><span class="chip">AI agents</span><span class="chip">real-time voice</span><span class="chip">PyTorch</span><span class="chip">ffmpeg</span></div>
   </div>
   <div class="job">
     <h3>Conversational AI Service (side project)</h3>
     <div class="meta">May 2023 – Jan 2024 · 9 mo</div>
     <p class="win">AI / ML engineer on a multi-modal conversational AI service — built and shipped AI features (emotion analysis, voice / video generation, NLP tooling).</p>
     <ul>
-      <li><b>Emotion classifier</b> — hand-labeled ~1,500 samples myself, KoELECTRA 7-class, <span class="hl">0.06 s CPU inference</span>; Optuna search</li>
+      <li><b>Emotion classifier</b> — hand-labeled ~1,500 samples myself, 7-class, <span class="hl">0.06 s CPU inference</span>; hyperparameter search</li>
       <li><b>Multi-modal AI</b> — TTS / voice-cloning, talking-head video, image captioning, speech enhancement, image generation (API integration + tuning)</li>
       <li><b>NLP tooling</b> — repetition avoidance via embedding similarity, profanity / text moderation, sentence splitting</li>
       <li>Multi-stage character-creation prompt engineering; closed beta (100 users) data analysis; end-to-end service QA &amp; release testing</li>
     </ul>
-    <div class="chips"><span class="chip">KoELECTRA</span><span class="chip">multi-modal AI</span><span class="chip">prompt engineering</span><span class="chip">data labeling</span><span class="chip">QA</span></div>
+    <div class="chips"><span class="chip">NLP</span><span class="chip">multi-modal AI</span><span class="chip">prompt engineering</span><span class="chip">data labeling</span><span class="chip">QA</span></div>
   </div>
 </section>
 
 <section>
   <h2>Competitions (solo)</h2>
-  <p><a class="badge" href="https://www.kaggle.com/aleaiest" target="_blank">Kaggle Competitions Expert</a> — top <span class="hl">0.7%</span> worldwide</p>
   <div class="job">
-    <div class="kg"><h3>GeoAI Aquaculture Pond Identification (Zindi · FAO/ITU)</h3><span class="rank">13th / 610</span></div>
-    <div class="meta">Aug 2026 · aquaculture-pond detection from Sentinel-1/2 satellite time series</div>
-    <ul><li>12-month Sentinel-1/2 time series with train/test from different regions &amp; seasons (domain shift; metric 0.4·AUC + 0.6·F1). In-domain CV was blind to the shift, so validated directly on the board: test-time self-training (pseudo-labels on unlabeled test rows) over a LightGBM stack with pretrained remote-sensing embeddings (Galileo · Presto) raised the public score 0.916 → 0.941; picked the two final submissions for variance, not rank — survived the private shakeup, public 17th → private 13th.</li></ul>
+    <div class="kg"><h3>Kaggle Competitions Expert</h3><span class="rank">top 0.7% worldwide</span></div>
+    <ul>
+      <li><b>Kaggle math-problem classification — 3rd place</b> (May 2025). Reframed generative classification as <b>constrained decoding</b> — a Logits Processor restricts output to label tokens, temperature=0 · max_tokens=1, eliminating format errors. <a href="https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution" target="_blank">→ Official 3rd-place solution writeup</a></li>
+      <li><b>Kaggle AIMO Progress Prize 2 — Silver medal</b> (Mar 2025). Fine-tuned and quantized a reasoning model for batch inference; multi-sample majority-vote self-consistency under a strict token budget.</li>
+      <li><b>Kaggle ARC Prize 2024 — Bronze medal</b> (Nov 2024). Abstract reasoning on unseen tasks.</li>
+    </ul>
   </div>
   <div class="job">
-    <div class="kg"><h3>KAChallenges: Classifying Math Problems</h3><span class="rank">3rd / 338</span></div>
-    <div class="meta">May 2025 · 8-topic math-problem classification (NLP)</div>
-    <ul><li>Reframed generative classification as constrained decoding — a Logits Processor restricts output to label tokens, with temperature=0 · max_tokens=1 (single deterministic token) to eliminate format errors. Qwen3-32B / Qwen2.5-32B-AWQ on vLLM + 32B domain fine-tuning.</li></ul>
-    <p class="meta" style="margin-top:8px"><a href="https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution" target="_blank">→ Official 3rd-place solution writeup</a></p>
-  </div>
-  <div class="job">
-    <div class="kg"><h3>AIMO Progress Prize 2</h3><span class="rank">🥈 Silver · 87 / 2212</span></div>
-    <div class="meta">Nov 2024 – Mar 2025 · olympiad-level math reasoning</div>
-    <ul><li>Fine-tuned DeepSeek-R1-Distill-Qwen-7B, then AWQ-quantized; vLLM batch inference. Multi-sample per question → majority-vote self-consistency; token-budget management to maximize samples within the time limit.</li></ul>
+    <div class="kg"><h3>Zindi · FAO/ITU satellite aquaculture-pond detection</h3><span class="rank">13th place</span></div>
+    <div class="meta">Aug 2026</div>
+    <ul><li>Heavy domain shift between train and test, so I validated directly on the leaderboard: <b>test-time self-training</b> raised the public score <span class="hl">0.916 → 0.941</span>, and picking final submissions for variance rather than rank survived the private shakeup.</li></ul>
   </div>
   <p class="meta">Also participated in Eedi · Nemotron · Deep Past and other LLM inference-optimization competitions</p>
   <div class="certs">
-    <figure><a href="assets/kac-cert.pdf" target="_blank"><img src="assets/kac-cert.jpg" alt="KAUST Academy certificate — 3rd/338" loading="lazy"></a><figcaption>KAUST Academy — 3rd / 338 (click for PDF)</figcaption></figure>
-    <figure><img src="assets/aimo2-silver.jpg" alt="Kaggle AIMO2 Silver Medal" loading="lazy"><figcaption>Kaggle — AIMO2 Silver, 87 / 2212</figcaption></figure>
+    <figure><a href="assets/kac-cert.pdf" target="_blank"><img src="assets/kac-cert.jpg" alt="KAUST Academy certificate" loading="lazy"></a><figcaption>KAUST Academy — math-problem classification, 3rd place</figcaption></figure>
+    <figure><img src="assets/aimo2-silver.jpg" alt="Kaggle AIMO2 Silver Medal" loading="lazy"><figcaption>Kaggle — AIMO Progress Prize 2, Silver</figcaption></figure>
   </div>
 </section>
 
-<section>
-  <h2>Skills</h2>
+<h2>Skills</h2>
   <div class="skillrow"><b>Language</b><span>Python</span></div>
   <div class="skillrow"><b>LLM / GenAI</b><span>Fine-tuning &amp; training (SFT·LoRA), RL (DPO/GRPO) experience, quantization (GPTQ/AWQ/W4A16), vLLM serving &amp; on-prem deployment, structured (JSON) output fixes, RAG · retrieval (embedding search · reranking)</span></div>
   <div class="skillrow"><b>NLP / CV / Data</b><span>Korean medical text processing/classification · PyTorch image-classification model training &amp; paper reproduction · data analysis (pandas) &amp; labeling</span></div>
