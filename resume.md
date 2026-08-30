@@ -8,7 +8,7 @@ AI/NLP researcher who trains, quantizes, and serves a medical LLM used by **100+
 
 ## Summary
 - **On-premise medical LLM serving — 100+ concurrent users inside hospital closed networks (self-hosted GPU).** Cloud APIs are banned in hospitals, so the full train→quantize→serve loop runs on-prem. Core differentiator.
-- End-to-end LLM: fine-tuning (SFT·LoRA, RL: DPO/GRPO), quantization (GPTQ/AWQ/W4A16), vLLM serving; multi-GPU training up to H200×8, serving 24B–80B models.
+- End-to-end LLM: fine-tuning (SFT·LoRA, RL: DPO/GRPO), quantization (GPTQ/AWQ/W4A16), vLLM serving; fine-tuned open-weight LLMs up to 100B+ parameters.
 - Kaggle Competitions Expert (**top 0.7%** worldwide) — math-problem classification **3rd**, AIMO Progress Prize 2 **Silver**, ARC Prize 2024 **Bronze**. Zindi · FAO/ITU satellite pond detection **13th**.
 - Consistent medical-domain track: Korean medical NLP → precision-medicine R&D → medical LLM.
 
@@ -19,16 +19,16 @@ AI/NLP researcher who trains, quantizes, and serves a medical LLM used by **100+
 ### Puzzle AI — AI / NLP Researcher · Nov 2019 – Present (6+ yrs)
 Owns training, quantization and **on-premise serving** of a medical LLM (Generative Medical Record) — **100+ concurrent users, deployed inside hospital closed networks** (cloud not allowed).
 - On-prem serving — LLM on hospital closed-network / self-hosted GPU, **redundant dual-server setup for 100+ concurrent users** (key strength)
-- Fine-tuning of Gemma 2/3/4 · Qwen · GPT-OSS (LoRA, RL: DPO/GRPO); multi-GPU training up to **H200×8**, served **24B–80B** models to GPU budgets
-- Quantization (GPTQ/AWQ/W4A16) for speed & VRAM — solved Gemma-4 AWQ (no official recipe), ~2.5× inference speed
+- Fine-tuning open-weight LLMs up to **100B+ parameters** (LoRA, RL: DPO/GRPO); multi-GPU distributed training, serving sized to GPU budgets
+- Quantization (GPTQ/AWQ/W4A16) for speed & VRAM — built an AWQ recipe for a model family with no official support, ~2.5× inference speed
 - vLLM serving & reproducibility debugging; stabilized structured (JSON) output via GBNF constrained decoding; serving image build 30 min → 11 s
 - GMR backend (FastAPI + vLLM) — multiple clinical-document summarization APIs (surgery / admission / discharge), map-reduce long-document summarization & generation-repetition control, standardized router error-code spec
-- Asan / Chungnam Nat'l Univ. hospital pipelines (SOAP · discharge · surgery records); **fine-tuned an LLM on 5 years of surgery records (A6000, on-prem)**; on-site demos
+- Tertiary-hospital record pipelines (SOAP · discharge · surgery records); **fine-tuned an LLM on multi-year surgery-record corpora, on-prem**; on-site demos
 - **Introduced & established vLLM** as the team's LLM serving stack (structured output, serving image, quantized serving); upgraded embedding & reranker models (separate KO/EN embeddings) for retrieval quality
 - **CDSS with a small LLM** (2023.10–2024.12) — clinical decision support for hospital use: generated & labeled training data with GPT, fine-tuned an open LLM, converted for on-prem deployment
-- **Precision-medicine R&D** (2020.11–2023.02, with St. Mary's Hospital) — blood-cancer mutation research: literature survey, data collection, preprocessing, analysis and modeling
+- **Precision-medicine R&D** (2020.11–2023.02, university-hospital collaboration) — blood-cancer mutation research: literature survey, data collection, preprocessing, analysis and modeling
 - Earlier (2019.11–2020): Korean medical NLP — symptom extraction and medical text classification
-- Open source: reported 4 Gemma-related bugs to vLLM · SGLang · llm-compressor
+- Open source: reported 4 upstream bugs to vLLM · SGLang · llm-compressor
 
 ---
 
@@ -67,7 +67,7 @@ AI/ML engineer on a multi-modal conversational AI service — built and shipped 
 - **Language:** Python
 - **LLM / GenAI:** Fine-tuning & training (SFT·LoRA), RL (DPO/GRPO) experience, quantization (GPTQ/AWQ/W4A16), vLLM serving & on-prem deployment, structured (JSON) output fixes, RAG · retrieval (embedding search · reranking)
 - **NLP / CV / Data:** Korean medical text processing/classification · PyTorch image-classification model training & paper reproduction · data analysis (pandas) & labeling
-- **Serving / Infra:** vLLM · FastAPI, Docker, Kubernetes / Ceph (rook), on-prem (closed-network) GPU serving, W&B
+- **Serving / Infra:** vLLM · FastAPI, Docker, Kubernetes, on-prem (closed-network) GPU serving, W&B
 - **AI agents:** Highly proficient with AI coding agents (Claude, GPT/Codex) — drives large-scale implementation via agents while owning spec, architecture, review & verification. (Puzzle AI early/mid code, Kaggle solutions, data labeling & model training are all done by hand.)
 
 ---
