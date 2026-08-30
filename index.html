@@ -113,7 +113,7 @@
   <ul>
     <li><b>On-premise medical LLM serving — 100+ concurrent users inside hospital closed networks (self-hosted GPU).</b> Cloud APIs are banned in hospitals, so the full train→quantize→serve loop runs on-prem. Core differentiator.</li>
     <li>End-to-end LLM: fine-tuning (SFT·LoRA, RL: DPO/GRPO), quantization (GPTQ/AWQ/W4A16), vLLM serving; fine-tuned open-weight LLMs up to 100B+ parameters.</li>
-    <li>Kaggle Competitions Expert (<span class="hl">top 0.7%</span> worldwide) — math-problem classification <span class="hl">3rd</span>, AIMO Progress Prize 2 <span class="hl">Silver</span>, ARC Prize 2024 <span class="hl">Bronze</span>. Zindi · FAO/ITU satellite pond detection <span class="hl">13th</span>.</li>
+    <li>Kaggle Competitions Expert (<span class="hl">top 0.7%</span> worldwide) — math-problem classification <span class="hl">3rd</span>, AIMO Progress Prize 2 <span class="hl">Silver</span>, ARC Prize 2024 <span class="hl">Bronze</span>. Zindi · FAO/ITU satellite pond detection <span class="hl">top 3%</span>.</li>
     <li>Consistent medical-domain track: Korean medical NLP → precision-medicine R&amp;D → medical LLM (6+ yrs).</li>
   </ul>
 </section>
@@ -126,17 +126,18 @@
     <p class="win">Owns training, quantization and <span class="hl">on-premise serving</span> of a medical LLM (Generative Medical Record) — <span class="hl">100+ concurrent users, deployed inside hospital closed networks</span> (cloud not allowed).</p>
     <ul>
       <li><b>On-prem serving</b> — LLM on hospital closed-network / self-hosted GPU, <b>redundant dual-server setup for 100+ concurrent users</b> (key strength)</li>
-      <li>Fine-tuning open-weight LLMs up to <b>100B+ parameters</b> (LoRA, RL: DPO/GRPO); multi-GPU distributed training; sized serving configurations to the available GPU budget</li>
-      <li>Quantization (GPTQ/AWQ/W4A16) for speed &amp; VRAM — built an AWQ recipe for a model family with no published recipe, ~2.5× faster inference</li>
+      <li>Fine-tuning open-weight LLMs up to <b>100B+ parameters</b> (LoRA, RL: DPO/GRPO); multi-GPU distributed training, serving sized to GPU budgets</li>
+      <li>Quantization (GPTQ/AWQ/W4A16) for speed &amp; VRAM — built an AWQ recipe for a model family with no official support, ~2.5× inference speed</li>
       <li>vLLM serving &amp; reproducibility debugging; stabilized structured (JSON) output via GBNF constrained decoding; serving image build 30 min → 11 s</li>
       <li>GMR backend (FastAPI + vLLM) — multiple clinical-document summarization APIs (surgery / admission / discharge), map-reduce long-document summarization &amp; generation-repetition control, standardized router error-code spec</li>
-      <li>Tertiary-hospital record pipelines (SOAP · discharge · surgery records); <b>fine-tuned an LLM on multiple years of surgery records, on-prem</b>; on-site demos</li>
+      <li>Tertiary-hospital record pipelines (SOAP · discharge · surgery records); <b>fine-tuned an LLM on multi-year surgery-record corpora, on-prem</b>; on-site demos</li>
       <li><b>Introduced &amp; established vLLM</b> as the team's LLM serving stack (structured output, serving image, quantized serving); upgraded embedding &amp; reranker models (separate KO/EN embeddings) for retrieval quality</li>
       <li><b>CDSS with a small LLM</b> (2023.10–2024.12) — clinical decision support for hospital use: generated &amp; labeled training data with GPT, fine-tuned an open LLM, converted for on-prem deployment</li>
       <li><b>Precision-medicine R&amp;D</b> (2020.11–2023.02, university-hospital collaboration) — blood-cancer mutation research: literature survey, data collection, preprocessing, analysis and modeling</li>
       <li>Earlier (2019.11–2020): Korean medical NLP — symptom extraction and medical text classification</li>
     </ul>
     <div class="chips"><span class="chip">Python</span><span class="chip">Open-weight LLMs</span><span class="chip">LoRA · DPO/GRPO</span><span class="chip">GPTQ · AWQ · W4A16</span><span class="chip">vLLM</span><span class="chip">FastAPI</span><span class="chip">On-prem</span></div>
+    <p class="meta" style="margin-top:13px">Open source: reported 4 upstream bugs to vLLM · SGLang · llm-compressor</p>
   </div>
 </section>
 
@@ -180,7 +181,7 @@
     </ul>
   </div>
   <div class="job">
-    <div class="kg"><h3>Zindi · FAO/ITU satellite aquaculture-pond detection</h3><span class="rank">13th place</span></div>
+    <div class="kg"><h3>Zindi · FAO/ITU satellite aquaculture-pond detection</h3><span class="rank">top 3%</span></div>
     <div class="meta">Aug 2026</div>
     <ul><li>Heavy domain shift between train and test, so I validated directly on the leaderboard: <b>test-time self-training</b> raised the public score <span class="hl">0.916 → 0.941</span>, and picking final submissions for variance rather than rank survived the private shakeup.</li></ul>
   </div>
