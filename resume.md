@@ -19,16 +19,15 @@ AI/NLP researcher who trains, quantizes, and serves a medical LLM used by **100+
 ### Puzzle AI — AI / NLP Researcher · Nov 2019 – Present (6+ yrs)
 Owns training, quantization and **on-premise serving** of a medical LLM (Generative Medical Record) — **100+ concurrent users, deployed inside hospital closed networks** (cloud not allowed).
 - On-prem serving — LLM on hospital closed-network / self-hosted GPU, **redundant dual-server setup for 100+ concurrent users** (key strength)
-- Fine-tuning open-weight LLMs up to **100B+ parameters** (LoRA, RL: DPO/GRPO); multi-GPU distributed training, serving sized to GPU budgets
-- Quantization (GPTQ/AWQ/W4A16) for speed & VRAM — built an AWQ recipe for a model family with no official support, ~2.5× inference speed
+- Fine-tuning open-weight LLMs up to **100B+ parameters** (LoRA, RL: DPO/GRPO); multi-GPU distributed training; sized serving configurations to the available GPU budget
+- Quantization (GPTQ/AWQ/W4A16) for speed & VRAM — built an AWQ recipe for a model family with no published recipe, ~2.5× faster inference
 - vLLM serving & reproducibility debugging; stabilized structured (JSON) output via GBNF constrained decoding; serving image build 30 min → 11 s
 - GMR backend (FastAPI + vLLM) — multiple clinical-document summarization APIs (surgery / admission / discharge), map-reduce long-document summarization & generation-repetition control, standardized router error-code spec
-- Tertiary-hospital record pipelines (SOAP · discharge · surgery records); **fine-tuned an LLM on multi-year surgery-record corpora, on-prem**; on-site demos
+- Tertiary-hospital record pipelines (SOAP · discharge · surgery records); **fine-tuned an LLM on multiple years of surgery records, on-prem**; on-site demos
 - **Introduced & established vLLM** as the team's LLM serving stack (structured output, serving image, quantized serving); upgraded embedding & reranker models (separate KO/EN embeddings) for retrieval quality
 - **CDSS with a small LLM** (2023.10–2024.12) — clinical decision support for hospital use: generated & labeled training data with GPT, fine-tuned an open LLM, converted for on-prem deployment
 - **Precision-medicine R&D** (2020.11–2023.02, university-hospital collaboration) — blood-cancer mutation research: literature survey, data collection, preprocessing, analysis and modeling
 - Earlier (2019.11–2020): Korean medical NLP — symptom extraction and medical text classification
-- Open source: reported 4 upstream bugs to vLLM · SGLang · llm-compressor
 
 ---
 
