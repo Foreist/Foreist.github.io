@@ -9,7 +9,7 @@ AI/NLP researcher who trains, quantizes, and serves a medical LLM used by **100+
 ## Summary
 - **On-premise medical LLM serving — 100+ concurrent users inside hospital closed networks (self-hosted GPU).** Cloud APIs are banned in hospitals, so the full train→quantize→serve loop runs on-prem. Core differentiator.
 - End-to-end LLM: fine-tuning (SFT·LoRA, RL: DPO/GRPO), quantization (GPTQ/AWQ/W4A16), vLLM serving; fine-tuned open-weight LLMs up to 100B+ parameters.
-- Kaggle Competitions Expert (**top 0.7%** worldwide) — math-problem classification **3rd**, AIMO Progress Prize 2 **Silver**, ARC Prize 2024 **Bronze**. Zindi · FAO/ITU satellite pond detection **13th**.
+- Kaggle Competitions Expert (**top 0.7%** worldwide) — math-problem classification **3rd**, AIMO Progress Prize 2 **Silver**, ARC Prize 2024 **Bronze**. Zindi · FAO/ITU satellite pond detection **top 3%**.
 - Consistent medical-domain track: Korean medical NLP → precision-medicine R&D → medical LLM.
 
 ---
@@ -19,15 +19,16 @@ AI/NLP researcher who trains, quantizes, and serves a medical LLM used by **100+
 ### Puzzle AI — AI / NLP Researcher · Nov 2019 – Present (6+ yrs)
 Owns training, quantization and **on-premise serving** of a medical LLM (Generative Medical Record) — **100+ concurrent users, deployed inside hospital closed networks** (cloud not allowed).
 - On-prem serving — LLM on hospital closed-network / self-hosted GPU, **redundant dual-server setup for 100+ concurrent users** (key strength)
-- Fine-tuning open-weight LLMs up to **100B+ parameters** (LoRA, RL: DPO/GRPO); multi-GPU distributed training; sized serving configurations to the available GPU budget
-- Quantization (GPTQ/AWQ/W4A16) for speed & VRAM — built an AWQ recipe for a model family with no published recipe, ~2.5× faster inference
+- Fine-tuning open-weight LLMs up to **100B+ parameters** (LoRA, RL: DPO/GRPO); multi-GPU distributed training, serving sized to GPU budgets
+- Quantization (GPTQ/AWQ/W4A16) for speed & VRAM — built an AWQ recipe for a model family with no official support, ~2.5× inference speed
 - vLLM serving & reproducibility debugging; stabilized structured (JSON) output via GBNF constrained decoding; serving image build 30 min → 11 s
 - GMR backend (FastAPI + vLLM) — multiple clinical-document summarization APIs (surgery / admission / discharge), map-reduce long-document summarization & generation-repetition control, standardized router error-code spec
-- Tertiary-hospital record pipelines (SOAP · discharge · surgery records); **fine-tuned an LLM on multiple years of surgery records, on-prem**; on-site demos
+- Tertiary-hospital record pipelines (SOAP · discharge · surgery records); **fine-tuned an LLM on multi-year surgery-record corpora, on-prem**; on-site demos
 - **Introduced & established vLLM** as the team's LLM serving stack (structured output, serving image, quantized serving); upgraded embedding & reranker models (separate KO/EN embeddings) for retrieval quality
 - **CDSS with a small LLM** (2023.10–2024.12) — clinical decision support for hospital use: generated & labeled training data with GPT, fine-tuned an open LLM, converted for on-prem deployment
 - **Precision-medicine R&D** (2020.11–2023.02, university-hospital collaboration) — blood-cancer mutation research: literature survey, data collection, preprocessing, analysis and modeling
 - Earlier (2019.11–2020): Korean medical NLP — symptom extraction and medical text classification
+- Open source: reported 4 upstream bugs to vLLM · SGLang · llm-compressor
 
 ---
 
@@ -56,7 +57,7 @@ AI/ML engineer on a multi-modal conversational AI service — built and shipped 
   - **Kaggle math-problem classification — 3rd place** (May 2025). Reframed generative classification as **constrained decoding** — a Logits Processor restricts output to label tokens, temperature=0 · max_tokens=1, eliminating format errors. → [Official 3rd-place solution writeup](https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution)
   - **Kaggle AIMO Progress Prize 2 — Silver medal** (Mar 2025). Fine-tuned and quantized a reasoning model for batch inference; multi-sample majority-vote self-consistency under a strict token budget.
   - **Kaggle ARC Prize 2024 — Bronze medal** (Nov 2024). Abstract reasoning on unseen tasks.
-- **Zindi · FAO/ITU satellite aquaculture-pond detection — 13th place** (Aug 2026). Heavy domain shift between train and test, so I validated directly on the leaderboard: **test-time self-training** raised the public score **0.916 → 0.941**, and picking final submissions for variance rather than rank survived the private shakeup.
+- **Zindi · FAO/ITU satellite aquaculture-pond detection — top 3%** (Aug 2026). Heavy domain shift between train and test, so I validated directly on the leaderboard: **test-time self-training** raised the public score **0.916 → 0.941**, and picking final submissions for variance rather than rank survived the private shakeup.
 
 *Also: Eedi · Nemotron · Deep Past and other LLM inference-optimization competitions.*
 
