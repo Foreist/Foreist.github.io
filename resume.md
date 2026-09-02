@@ -2,7 +2,7 @@
 
 **Medical LLM (Generative Medical Record) — research & on-premise serving. Open to new roles.**
 AI/NLP researcher who trains, quantizes, and serves a medical LLM used by **100+ concurrent users**, deployed to **hospital closed networks (on-premise)** where cloud APIs are not allowed. 2019.11–present (6+ yrs).
-🏅 **Kaggle Competitions Expert · top 0.7% worldwide**
+🏅 **Kaggle Competitions Expert · top 0.7% worldwide** — 🥇 1 · 🥈 1 · 🥉 1
 
 ---
 
