@@ -9,7 +9,7 @@ AI/NLP researcher who trains, quantizes, and serves a medical LLM used by **100+
 ## Summary
 - **On-premise medical LLM serving — 100+ concurrent users inside hospital closed networks (self-hosted GPU).** Cloud APIs are banned in hospitals, so the full train→quantize→serve loop runs on-prem. Core differentiator.
 - End-to-end LLM: fine-tuning (SFT·LoRA, RL: DPO/GRPO), quantization (GPTQ/AWQ/W4A16), vLLM serving; fine-tuned open-weight LLMs up to 100B+ parameters.
-- Kaggle Competitions Expert (**top 0.7%** worldwide) — OpenAI AI Agent Security **🥇 13th**, math-problem classification **🥇 3rd**, AIMO Progress Prize 2 **🥈 Silver**, ARC Prize 2024 **🥉 Bronze**. Zindi · FAO/ITU satellite pond detection **top 3%**. Open to new roles — dxodnd@gmail.com.
+- Kaggle Competitions Expert (**top 0.7%** worldwide) — OpenAI AI Agent Security **🥇 13th**, math-problem classification **3rd**, AIMO Progress Prize 2 **🥈 Silver**, ARC Prize 2024 **🥉 Bronze**. Zindi · FAO/ITU satellite pond detection **top 3%**. Open to new roles — dxodnd@gmail.com.
 - Consistent medical-domain track: Korean medical NLP → precision-medicine R&D → medical LLM.
 
 ---
@@ -54,7 +54,7 @@ AI/ML engineer on a multi-modal conversational AI service — built and shipped 
 
 - **Kaggle Competitions Expert · top 0.7% worldwide**
   - **Kaggle AI Agent Security (OpenAI) — 🥇 13th** (Sep 2026). Kernels-only red-team benchmark. Public board was a marker-exfiltration race; private zeroed that family. Selected one EXFIL notebook and one confused-deputy notebook (max-of-two) so the hedge survived — public ~117th → **🥇 private 13th**.
-  - **Kaggle math-problem classification — 🥇 3rd** (May 2025). Reframed generative classification as **constrained decoding** — a Logits Processor restricts output to label tokens, temperature=0 · max_tokens=1, eliminating format errors. → [Official 3rd-place solution writeup](https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution)
+  - **Kaggle math-problem classification — 3rd place** (May 2025). Reframed generative classification as **constrained decoding** — a Logits Processor restricts output to label tokens, temperature=0 · max_tokens=1, eliminating format errors. → [Official 3rd-place solution writeup](https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution)
   - **Kaggle AIMO Progress Prize 2 — 🥈 Silver** (Mar 2025). Fine-tuned and quantized a reasoning model for batch inference; multi-sample majority-vote self-consistency under a strict token budget.
   - **Kaggle ARC Prize 2024 — 🥉 Bronze** (Nov 2024). Abstract reasoning on unseen tasks.
 - **Zindi · FAO/ITU satellite aquaculture-pond detection — top 3%** (Aug 2026). Heavy domain shift between train and test, so I validated directly on the leaderboard: **test-time self-training** raised the public score **0.916 → 0.941**, and picking final submissions for variance rather than rank survived the private shakeup.
