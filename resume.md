@@ -41,6 +41,11 @@ Drove development of a beauty/health AI product — shipped a real-time voice as
 - Tuned train/inference preprocessing for deployment accuracy → shipped **8 models on-device**
 - **On-device shorts auto-generation & rendering** — generation-progress UI, dynamic editing (fade-out, frozen-frame trim, segment clamping), background music, session persistence
 
+### QR Receipt Voucher (side project) · 2026 – present
+A web service that handles gift-certificate refunds at participating stores. Customers scan a QR code in the store and upload a receipt photo; the service reads the amount and receipt number, decides the refund tier, records the issuance, and blocks duplicate claims. An admin view sets refund amounts and manages records.
+- **Launched commercially in 2026 and currently in live use** at participating stores
+- Built and operated **solo, end to end** — product, development, CI (GitHub Actions), and zero-downtime AWS deployment
+
 ### Conversational AI Service (side project) · May 2023 – Jan 2024
 AI/ML engineer on a multi-modal conversational AI service — built and shipped AI features (emotion analysis, voice/video generation, NLP tooling).
 - **Emotion classifier** — hand-labeled ~1,500 samples myself, 7-class, **0.06 s CPU inference**; hyperparameter search
