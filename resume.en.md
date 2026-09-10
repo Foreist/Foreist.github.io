@@ -1,7 +1,6 @@
 # Kim Taewoong (김태웅) — AI / NLP Researcher
 
-**Medical LLM (Generative Medical Record) — research & on-premise serving. Open to new roles.**
-AI/NLP researcher who trains, quantizes, and serves a medical LLM used by **100+ concurrent users**, deployed to **hospital closed networks (on-premise)** where cloud APIs are not allowed. 2019.11–present (6+ yrs).
+**Medical LLM (Generative Medical Record) — research & on-premise serving (Nov 2019 – Sep 2026)**
 🏅 **Kaggle Competitions Expert · top 0.2% worldwide** — 🥇 1 · 🥈 1 · 🥉 1
 
 > 한국어 버전: [resume.md](resume.md)
@@ -11,21 +10,21 @@ AI/NLP researcher who trains, quantizes, and serves a medical LLM used by **100+
 ## Summary
 - **On-premise medical LLM serving — 100+ concurrent users inside hospital closed networks (self-hosted GPU).** Cloud APIs are banned in hospitals, so the full train→quantize→serve loop runs on-prem. Core differentiator.
 - End-to-end LLM: fine-tuning (SFT·LoRA, RL: DPO/GRPO), quantization (GPTQ/AWQ/W4A16), vLLM serving; fine-tuned open-weight LLMs up to 100B+ parameters.
-- Kaggle Competitions Expert (**top 0.2%** worldwide) — OpenAI AI Agent Security **🥇 13th**, math-problem classification **3rd**, AIMO Progress Prize 2 **🥈 Silver**, ARC Prize 2024 **🥉 Bronze**. Zindi · FAO/ITU satellite pond detection **top 3%**. Open to new roles — dxodnd@gmail.com.
-- Consistent medical-domain track: Korean medical NLP → precision-medicine R&D → medical LLM.
+- Kaggle Competitions Expert (**top 0.2%** worldwide) — OpenAI AI Agent Security **🥇 13th**, math-problem classification **3rd**, AIMO Progress Prize 2 **🥈 Silver**, ARC Prize 2024 **🥉 Bronze**. Zindi · FAO/ITU satellite pond detection **top 3%**.
+- Consistent medical-domain track: Korean medical NLP → precision-medicine R&D → medical LLM (6 yrs 10 mo).
 
 ---
 
 ## Experience
 
-### Puzzle AI — AI / NLP Researcher · Nov 2019 – Present (6+ yrs)
+### Puzzle AI — AI / NLP Researcher · Nov 2019 – Sep 2026 (6 yrs 10 mo)
 Owns training, quantization and **on-premise serving** of a medical LLM (Generative Medical Record) — **100+ concurrent users, deployed inside hospital closed networks** (cloud not allowed).
 - On-prem serving — LLM on hospital closed-network / self-hosted GPU, **redundant dual-server setup for 100+ concurrent users** (key strength)
 - Fine-tuning open-weight LLMs up to **100B+ parameters** (LoRA, RL: DPO/GRPO); multi-GPU distributed training; sized serving configurations to the available GPU budget
 - Quantization (GPTQ/AWQ/W4A16) for speed & VRAM — built an AWQ recipe for a model family with no published recipe, ~2.5× faster inference
 - vLLM serving & reproducibility debugging; stabilized structured (JSON) output via GBNF constrained decoding; serving image build 30 min → 11 s
-- GMR backend (FastAPI + vLLM) — multiple clinical-document summarization APIs (surgery / admission / discharge), map-reduce long-document summarization & generation-repetition control, standardized router error-code spec
-- Tertiary-hospital record pipelines (SOAP · discharge · surgery records); **fine-tuned an LLM on multiple years of surgery records, on-prem**; on-site demos
+- Clinical-document summarization backend — long-document handling and repetition control, standardized error-code spec
+- Hospital record pipelines — fine-tuned an LLM on real records, on-prem; on-site demos
 - **Introduced & established vLLM** as the team's LLM serving stack (structured output, serving image, quantized serving); upgraded embedding & reranker models (separate KO/EN embeddings) for retrieval quality
 - **CDSS with a small LLM** (2023.10–2024.12) — clinical decision support for hospital use: generated & labeled training data with GPT, fine-tuned an open LLM, converted for on-prem deployment
 - **Precision-medicine R&D** (2020.11–2023.02, university-hospital collaboration) — blood-cancer mutation research: literature survey, data collection, preprocessing, analysis and modeling
@@ -35,6 +34,10 @@ Owns training, quantization and **on-premise serving** of a medical LLM (Generat
 
 ## Projects
 
+### QR Receipt Voucher (side project) · 2026 – present
+A web service that handles gift-certificate refunds at participating stores. Customers scan a QR code in the store and upload a receipt photo; the service reads the amount and receipt number, decides the refund tier, records the issuance, and blocks duplicate claims. An admin view sets refund amounts and manages records.
+- **Launched commercially in 2026 and currently in live use** at participating stores
+- Built and operated **solo, end to end** — product, development, CI (GitHub Actions), and zero-downtime AWS deployment
 ### Beauty / Health AI Product (side project) · Sep 2025 – present
 Drove development of a beauty/health AI product — shipped a real-time voice assistant, scalp/skin-diagnosis CV, and on-device shorts auto-generation; owned spec & review while **AI coding agents** did most of the implementation.
 - Real-time **ambient voice assistant** — live STT / translation, sentence-boundary & endpoint tuning
@@ -43,10 +46,6 @@ Drove development of a beauty/health AI product — shipped a real-time voice as
 - Tuned train/inference preprocessing for deployment accuracy → shipped **8 models on-device**
 - **On-device shorts auto-generation & rendering** — generation-progress UI, dynamic editing (fade-out, frozen-frame trim, segment clamping), background music, session persistence
 
-### QR Receipt Voucher (side project) · 2026 – present
-A web service that handles gift-certificate refunds at participating stores. Customers scan a QR code in the store and upload a receipt photo; the service reads the amount and receipt number, decides the refund tier, records the issuance, and blocks duplicate claims. An admin view sets refund amounts and manages records.
-- **Launched commercially in 2026 and currently in live use** at participating stores
-- Built and operated **solo, end to end** — product, development, CI (GitHub Actions), and zero-downtime AWS deployment
 
 ### Conversational AI Service (side project) · May 2023 – Jan 2024
 AI/ML engineer on a multi-modal conversational AI service — built and shipped AI features (emotion analysis, voice/video generation, NLP tooling).
