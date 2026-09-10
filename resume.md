@@ -1,87 +1,102 @@
-# Kim Taewoong (김태웅) — AI / NLP Researcher
+# 김태웅 (Kim Taewoong) — AI / NLP 연구자
 
-**Medical LLM (Generative Medical Record) — research & on-premise serving. Open to new roles.**
-AI/NLP researcher who trains, quantizes, and serves a medical LLM used by **100+ concurrent users**, deployed to **hospital closed networks (on-premise)** where cloud APIs are not allowed. 2019.11–present (6+ yrs).
-🏅 **Kaggle Competitions Expert · top 0.2% worldwide** — 🥇 1 · 🥈 1 · 🥉 1
+**의료 LLM(생성형 의무기록) — 연구 및 온프레미스 서빙. 새로운 기회를 찾고 있습니다.**
+의료 LLM을 학습·양자화·서빙하는 AI/NLP 연구자. **동시접속 100명 이상**이 쓰는 모델을 클라우드 API 사용이 금지된 **병원 폐쇄망(온프레미스)** 에 배포·운영 중. 2019.11~현재(6년+).
+🏅 **Kaggle Competitions Expert · 전 세계 상위 0.2%** — 🥇 1 · 🥈 1 · 🥉 1
 
----
-
-## Summary
-- **On-premise medical LLM serving — 100+ concurrent users inside hospital closed networks (self-hosted GPU).** Cloud APIs are banned in hospitals, so the full train→quantize→serve loop runs on-prem. Core differentiator.
-- End-to-end LLM: fine-tuning (SFT·LoRA, RL: DPO/GRPO), quantization (GPTQ/AWQ/W4A16), vLLM serving; fine-tuned open-weight LLMs up to 100B+ parameters.
-- Kaggle Competitions Expert (**top 0.2%** worldwide) — OpenAI AI Agent Security **🥇 13th**, math-problem classification **3rd**, AIMO Progress Prize 2 **🥈 Silver**, ARC Prize 2024 **🥉 Bronze**. Zindi · FAO/ITU satellite pond detection **top 3%**. Open to new roles — dxodnd@gmail.com.
-- Consistent medical-domain track: Korean medical NLP → precision-medicine R&D → medical LLM.
+> English version: [resume.en.md](resume.en.md)
 
 ---
 
-## Experience
+## 요약
 
-### Puzzle AI — AI / NLP Researcher · Nov 2019 – Present (6+ yrs)
-Owns training, quantization and **on-premise serving** of a medical LLM (Generative Medical Record) — **100+ concurrent users, deployed inside hospital closed networks** (cloud not allowed).
-- On-prem serving — LLM on hospital closed-network / self-hosted GPU, **redundant dual-server setup for 100+ concurrent users** (key strength)
-- Fine-tuning open-weight LLMs up to **100B+ parameters** (LoRA, RL: DPO/GRPO); multi-GPU distributed training; sized serving configurations to the available GPU budget
-- Quantization (GPTQ/AWQ/W4A16) for speed & VRAM — built an AWQ recipe for a model family with no published recipe, ~2.5× faster inference
-- vLLM serving & reproducibility debugging; stabilized structured (JSON) output via GBNF constrained decoding; serving image build 30 min → 11 s
-- GMR backend (FastAPI + vLLM) — multiple clinical-document summarization APIs (surgery / admission / discharge), map-reduce long-document summarization & generation-repetition control, standardized router error-code spec
-- Tertiary-hospital record pipelines (SOAP · discharge · surgery records); **fine-tuned an LLM on multiple years of surgery records, on-prem**; on-site demos
-- **Introduced & established vLLM** as the team's LLM serving stack (structured output, serving image, quantized serving); upgraded embedding & reranker models (separate KO/EN embeddings) for retrieval quality
-- **CDSS with a small LLM** (2023.10–2024.12) — clinical decision support for hospital use: generated & labeled training data with GPT, fine-tuned an open LLM, converted for on-prem deployment
-- **Precision-medicine R&D** (2020.11–2023.02, university-hospital collaboration) — blood-cancer mutation research: literature survey, data collection, preprocessing, analysis and modeling
-- Earlier (2019.11–2020): Korean medical NLP — symptom extraction and medical text classification
+- **병원 폐쇄망 내 온프레미스 의료 LLM 서빙 — 동시접속 100명 이상(자가 GPU 서버).** 병원에서는 클라우드 API가 금지라 학습→양자화→서빙 전 과정을 온프레미스로 돌립니다. 핵심 차별점.
+- 엔드투엔드 LLM: 파인튜닝(SFT·LoRA, RL: DPO/GRPO), 양자화(GPTQ/AWQ/W4A16), vLLM 서빙. 100B+ 파라미터 오픈 가중치 LLM 파인튜닝 경험.
+- Kaggle Competitions Expert(**전 세계 상위 0.2%**) — OpenAI AI Agent Security **🥇 13위**, 수학문제 분류 **3위**, AIMO Progress Prize 2 **🥈 은메달**, ARC Prize 2024 **🥉 동메달**. Zindi · FAO/ITU 위성 양식장 탐지 **상위 3%**. 새로운 기회 환영 — dxodnd@gmail.com.
+- 일관된 의료 도메인 커리어: 한국어 의료 NLP → 정밀의료 R&D → 의료 LLM.
 
 ---
 
-## Projects
+## 경력
 
-### Beauty / Health AI Product (side project) · Sep 2025 – present
-Drove development of a beauty/health AI product — shipped a real-time voice assistant, scalp/skin-diagnosis CV, and on-device shorts auto-generation; owned spec & review while **AI coding agents** did most of the implementation.
-- Real-time **ambient voice assistant** — live STT / translation, sentence-boundary & endpoint tuning
-- **Scalp diagnosis CV** — reproduced a published benchmark and beat it (macro-F1 **0.744** vs 0.689)
-- **Facial skin diagnosis (8 attributes)** — per-attribute ordinal-grading models; deployment MAE **~0.49**, **~94% within ±1 grade**
-- Tuned train/inference preprocessing for deployment accuracy → shipped **8 models on-device**
-- **On-device shorts auto-generation & rendering** — generation-progress UI, dynamic editing (fade-out, frozen-frame trim, segment clamping), background music, session persistence
+### 퍼즐에이아이 — AI / NLP 연구원 · 2019년 11월 ~ 현재 (6년+)
 
-### QR Receipt Voucher (side project) · 2026 – present
-A web service that handles gift-certificate refunds at participating stores. Customers scan a QR code in the store and upload a receipt photo; the service reads the amount and receipt number, decides the refund tier, records the issuance, and blocks duplicate claims. An admin view sets refund amounts and manages records.
-- **Launched commercially in 2026 and currently in live use** at participating stores
-- Built and operated **solo, end to end** — product, development, CI (GitHub Actions), and zero-downtime AWS deployment
+의료 LLM(생성형 의무기록)의 학습·양자화·**온프레미스 서빙** 총괄 — **동시접속 100명 이상, 병원 폐쇄망 내부 배포**(클라우드 사용 불가).
 
-### Conversational AI Service (side project) · May 2023 – Jan 2024
-AI/ML engineer on a multi-modal conversational AI service — built and shipped AI features (emotion analysis, voice/video generation, NLP tooling).
-- **Emotion classifier** — hand-labeled ~1,500 samples myself, 7-class, **0.06 s CPU inference**; hyperparameter search
-- **Multi-modal AI** — TTS / voice-cloning, talking-head video, image captioning, speech enhancement, image generation (API integration + tuning)
-- **NLP tooling** — repetition avoidance via embedding similarity, profanity / text moderation, sentence splitting
-- Multi-stage character-creation prompt engineering; closed beta (100 users) data analysis; end-to-end service QA & release testing
+- 온프레미스 서빙 — 병원 폐쇄망/자가 GPU 서버에 LLM 배포, **100명 이상 동시접속용 이중화 서버 구성**(핵심 강점)
+- **100B+ 파라미터** 오픈 가중치 LLM 파인튜닝(LoRA, RL: DPO/GRPO). 멀티 GPU 분산학습. 가용 GPU 예산에 맞춘 서빙 구성 설계
+- 양자화(GPTQ/AWQ/W4A16)로 속도·VRAM 최적화 — 공개 레시피가 없던 모델군의 AWQ 레시피를 직접 구축, 추론 속도 약 2.5배 향상
+- vLLM 서빙 및 재현성 디버깅. GBNF constrained decoding으로 구조화(JSON) 출력 안정화. 서빙 이미지 빌드 30분 → 11초
+- GMR 백엔드(FastAPI + vLLM) — 진료문서 요약 API 다종(수술/입원/퇴원), map-reduce 장문 요약 및 생성 반복 제어, 라우터 에러코드 스펙 표준화
+- 상급종합병원 의무기록 파이프라인(SOAP·퇴원·수술기록). **수년치 수술기록으로 LLM 파인튜닝, 온프레미스**. 병원 현장 시연
+- 팀의 LLM 서빙 스택으로 **vLLM 도입·정착**(구조화 출력, 서빙 이미지, 양자화 서빙). 검색 품질 향상을 위한 임베딩·리랭커 모델 교체(한/영 임베딩 분리)
+- **경량 LLM 기반 CDSS**(2023.10~2024.12) — 병원용 임상 의사결정 지원: GPT로 학습데이터 생성·라벨링, 오픈 LLM 파인튜닝 후 온프레미스 배포 형태로 변환
+- **정밀의료 R&D**(2020.11~2023.02, 대학병원 공동연구) — 혈액암 변이 연구: 문헌조사, 데이터 수집·전처리·분석·모델링
+- 초기(2019.11~2020): 한국어 의료 NLP — 증상 추출 및 의료 텍스트 분류
 
 ---
 
-## Competitions (solo)
+## 프로젝트
 
-- **Kaggle Competitions Expert · top 0.2% worldwide**
-  - **Kaggle AI Agent Security (OpenAI) — 🥇 13th** (Sep 2026). Kernels-only red-team benchmark. Public board was a marker-exfiltration race; private zeroed that family. Selected one EXFIL notebook and one confused-deputy notebook (max-of-two) so the hedge survived — public ~117th → **🥇 private 13th**.
-  - **Kaggle math-problem classification — 3rd place** (May 2025). Reframed generative classification as **constrained decoding** — a Logits Processor restricts output to label tokens, temperature=0 · max_tokens=1, eliminating format errors. → [Official 3rd-place solution writeup](https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution)
-  - **Kaggle AIMO Progress Prize 2 — 🥈 Silver** (Mar 2025). Fine-tuned and quantized a reasoning model for batch inference; multi-sample majority-vote self-consistency under a strict token budget.
-  - **Kaggle ARC Prize 2024 — 🥉 Bronze** (Nov 2024). Abstract reasoning on unseen tasks.
-- **Zindi · FAO/ITU satellite aquaculture-pond detection — top 3%** (Aug 2026). Heavy domain shift between train and test, so I validated directly on the leaderboard: **test-time self-training** raised the public score **0.916 → 0.941**, and picking final submissions for variance rather than rank survived the private shakeup.
+### 뷰티/헬스 AI 제품 (사이드 프로젝트) · 2025년 9월 ~ 현재
 
-*Also: Eedi · Nemotron · Deep Past and other LLM inference-optimization competitions.*
+뷰티/헬스 AI 제품 개발 주도 — 실시간 음성 어시스턴트, 두피/피부 진단 CV, 온디바이스 숏폼 자동생성을 실제 출시. 스펙·리뷰는 직접, 구현의 대부분은 **AI 코딩 에이전트**가 담당.
+
+- 실시간 **앰비언트 음성 어시스턴트** — 실시간 STT/번역, 문장 경계·엔드포인트 튜닝
+- **두피 진단 CV** — 공개 벤치마크 재현 후 추월(macro-F1 **0.744** vs 0.689)
+- **얼굴 피부 진단(8개 속성)** — 속성별 순서형 등급 모델. 배포 MAE **~0.49**, **±1등급 이내 ~94%**
+- 배포 정확도를 위한 학습/추론 전처리 튜닝 → **온디바이스 8개 모델** 출시
+- **온디바이스 숏폼 자동생성·렌더링** — 생성 진행 UI, 동적 편집(페이드아웃, 정지프레임 트림, 구간 클램핑), 배경음악, 세션 유지
+
+### QR 영수증 상품권 (사이드 프로젝트) · 2026년 ~ 현재
+
+가맹점에서 상품권 환급을 처리하는 웹 서비스. 고객이 매장에서 QR을 찍고 영수증 사진을 올리면 금액·영수증 번호를 읽어 환급 등급을 정하고, 발급 기록과 중복 청구 방지를 처리. 관리자 화면에서 환급액 설정·기록 관리.
+
+- **2026년 상용 출시, 가맹점에서 실제 사용 중**
+- **1인 풀스택 단독** 개발·운영 — 기획, 개발, CI(GitHub Actions), 무중단 AWS 배포
+
+### 대화형 AI 서비스 (사이드 프로젝트) · 2023년 5월 ~ 2024년 1월
+
+멀티모달 대화형 AI 서비스의 AI/ML 엔지니어 — 감정분석, 음성/영상 생성, NLP 툴링 등 AI 기능 개발·출시.
+
+- **감정 분류기** — 직접 ~1,500건 라벨링, 7-class, **CPU 추론 0.06초**. 하이퍼파라미터 탐색
+- **멀티모달 AI** — TTS/음성 클로닝, 토킹헤드 영상, 이미지 캡셔닝, 음성 향상, 이미지 생성(API 연동+튜닝)
+- **NLP 툴링** — 임베딩 유사도 기반 반복 회피, 비속어/텍스트 모더레이션, 문장 분리
+- 다단계 캐릭터 생성 프롬프트 엔지니어링. 클로즈드 베타(100명) 데이터 분석. 엔드투엔드 서비스 QA·출시 테스트
 
 ---
 
-## Skills
-- **Language:** Python
-- **LLM / GenAI:** Fine-tuning & training (SFT·LoRA), RL (DPO/GRPO) experience, quantization (GPTQ/AWQ/W4A16), vLLM serving & on-prem deployment, structured (JSON) output fixes, RAG · retrieval (embedding search · reranking)
-- **NLP / CV / Data:** Korean medical text processing/classification · PyTorch image-classification model training & paper reproduction · data analysis (pandas) & labeling
-- **Serving / Infra:** vLLM · FastAPI, Docker, Kubernetes, on-prem (closed-network) GPU serving, W&B
-- **AI agents:** Highly proficient with AI coding agents (Claude, GPT/Codex) — drives large-scale implementation via agents while owning spec, architecture, review & verification. (Puzzle AI early/mid code, Kaggle solutions, data labeling & model training are all done by hand.)
+## 수상 · 컴페티션 (개인)
+
+- **Kaggle Competitions Expert · 전 세계 상위 0.2%**
+  - **Kaggle AI Agent Security (OpenAI) — 🥇 13위**(2026년 9월). 커널 전용 레드팀 벤치마크. 공개 보드는 마커 탈취 경쟁이었으나 프라이빗에서 해당 계열이 무효화. EXFIL 노트북 1개 + confused-deputy 노트북 1개(2개 중 상위 득점)로 헤지 — 공개 ~117위 → **🥇 프라이빗 13위**.
+  - **Kaggle 수학문제 분류 — 3위**(2025년 5월). 생성형 분류를 **constrained decoding**으로 재구성 — Logits Processor가 출력을 라벨 토큰으로 제한, temperature=0·max_tokens=1로 형식 오류 제거. → [공식 3위 솔루션 라이트업](https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution)
+  - **Kaggle AIMO Progress Prize 2 — 🥈 은메달**(2025년 3월). 배치 추론용 추론 모델 파인튜닝·양자화. 엄격한 토큰 예산 안에서 다중 샘플 majority-vote self-consistency.
+  - **Kaggle ARC Prize 2024 — 🥉 동메달**(2024년 11월). 미지의 태스크에 대한 추상 추론.
+- **Zindi · FAO/ITU 위성 양식장 탐지 — 상위 3%**(2026년 8월). 학습/테스트 간 도메인 차이가 커서 리더보드로 직접 검증: **테스트타임 자가학습**으로 공개 점수 **0.916 → 0.941** 향상. 순위보다 분산 기준으로 최종 제출을 골라 프라이빗 반전을 버팀.
+
+*그 외: Eedi·Nemotron·Deep Past 등 LLM 추론 최적화 컴페티션 참가.*
 
 ---
 
-## Community · Leadership
-**learnup study group — Organizer/Leader** (Somoim app), Feb 2025 – Apr 2026 (1-year milestone Jan 30, 2026). Grew and sustained a 50+ member group for over a year; ran daily in-person meetups (after-work cafe), owning scheduling, venue & facilitation.
+## 기술 스택
 
-## Education
+- **언어:** Python
+- **LLM / GenAI:** 파인튜닝·학습(SFT·LoRA), RL(DPO/GRPO) 경험, 양자화(GPTQ/AWQ/W4A16), vLLM 서빙·온프레미스 배포, 구조화(JSON) 출력 수정, RAG·검색(임베딩 검색·리랭킹)
+- **NLP / CV / 데이터:** 한국어 의료 텍스트 처리/분류 · PyTorch 이미지분류 모델 학습·논문 재현 · 데이터 분석(pandas)·라벨링
+- **서빙 / 인프라:** vLLM·FastAPI, Docker, Kubernetes, 온프레미스(폐쇄망) GPU 서빙, W&B
+- **AI 에이전트:** AI 코딩 에이전트(Claude, GPT/Codex) 고도 활용 — 스펙·아키텍처·리뷰·검증은 직접, 대규모 구현은 에이전트로 주도. (퍼즐에이아이 초기/중기 코드, 캐글 솔루션, 데이터 라벨링·모델 학습은 전부 직접 손으로.)
+
+---
+
+## 커뮤니티 · 리더십
+
+**learnup 스터디 — 운영자/리더**(소모임 앱), 2025년 2월 ~ 2026년 4월(1주년 2026년 1월 30일). 50명 이상 모임을 1년 넘게 유지·성장. 평일 퇴근 후 카페 오프라인 데일리 모임 운영 — 일정·장소·진행 총괄.
+
+## 학력
+
 —
 
-## Links
+## 링크
+
 Kaggle [kaggle.com/aleaiest](https://www.kaggle.com/aleaiest) · Zindi [zindi.africa/users/Foreist](https://zindi.africa/users/Foreist) · Hugging Face [huggingface.co/qwertist](https://huggingface.co/qwertist) · Email dxodnd@gmail.com
