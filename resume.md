@@ -9,7 +9,7 @@
 
 ## 요약
 
-- **병원 폐쇄망 내 온프레미스 의료 LLM 서빙 — 동시접속 100명 이상(자가 GPU 서버).** 병원에서는 클라우드 API가 금지라 학습→양자화→서빙 전 과정을 온프레미스로 돌린다. 핵심 차별점.
+- **병원 폐쇄망 안 자가 GPU 서버로 의료 LLM 서빙 — 동시접속 100명 이상.** 외부 클라우드 API를 쓸 수 없는 환경이라 학습→양자화→서빙까지 전부 온프레미스로 직접 돌린다.
 - 엔드투엔드 LLM: 파인튜닝(SFT·LoRA, RL: DPO/GRPO), 양자화(GPTQ/AWQ/W4A16), vLLM 서빙. 100B+ 파라미터 오픈 가중치 LLM 파인튜닝 경험.
 - Kaggle Competitions Expert(**전 세계 상위 0.2%**) — OpenAI AI Agent Security **🥇 13위**, 수학문제 분류 **3위**, AIMO Progress Prize 2 **🥈 은메달**, ARC Prize 2024 **🥉 동메달**. Zindi · FAO/ITU 위성 양식장 탐지 **상위 3%**.
 - 일관된 의료 도메인 커리어: 한국어 의료 NLP → 정밀의료 R&D → 의료 LLM.

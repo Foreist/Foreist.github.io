@@ -8,7 +8,7 @@
 ---
 
 ## Summary
-- **On-premise medical LLM serving — 100+ concurrent users inside hospital closed networks (self-hosted GPU).** Cloud APIs are banned in hospitals, so the full train→quantize→serve loop runs on-prem. Core differentiator.
+- **On-premise medical LLM serving — 100+ concurrent users inside hospital closed networks (self-hosted GPU).** External cloud APIs are unusable there, so the full train→quantize→serve loop runs on-prem, end to end.
 - End-to-end LLM: fine-tuning (SFT·LoRA, RL: DPO/GRPO), quantization (GPTQ/AWQ/W4A16), vLLM serving; fine-tuned open-weight LLMs up to 100B+ parameters.
 - Kaggle Competitions Expert (**top 0.2%** worldwide) — OpenAI AI Agent Security **🥇 13th**, math-problem classification **3rd**, AIMO Progress Prize 2 **🥈 Silver**, ARC Prize 2024 **🥉 Bronze**. Zindi · FAO/ITU satellite pond detection **top 3%**.
 - Consistent medical-domain track: Korean medical NLP → precision-medicine R&D → medical LLM (6 yrs 10 mo).
