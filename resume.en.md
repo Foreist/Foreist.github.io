@@ -10,7 +10,7 @@
 ## Summary
 - **On-premise medical LLM serving — 100+ concurrent users inside hospital closed networks (self-hosted GPU).** External cloud APIs are unusable there, so the full train→quantize→serve loop runs on-prem, end to end.
 - End-to-end LLM: fine-tuning (SFT·LoRA, RL: DPO/GRPO), quantization (GPTQ/AWQ/W4A16), vLLM serving; fine-tuned open-weight LLMs up to 100B+ parameters.
-- Kaggle Competitions Expert (**top 0.2%** worldwide) — OpenAI AI Agent Security **🥇 13th**, math-problem classification **3rd**, AIMO Progress Prize 2 **🥈 Silver**, ARC Prize 2024 **🥉 Bronze**. Zindi · FAO/ITU satellite pond detection **top 3%**.
+- Kaggle Competitions Expert (**top 0.2%** worldwide) — OpenAI AI Agent Security **🥇 Gold**, math-problem classification **3rd**, AIMO Progress Prize 2 **🥈 Silver**, ARC Prize 2024 **🥉 Bronze**. Zindi · FAO/ITU satellite pond detection **top 3%**.
 - Consistent medical-domain track: Korean medical NLP → precision-medicine R&D → medical LLM (6 yrs 10 mo).
 
 ---
@@ -22,7 +22,7 @@ Owns training, quantization and **on-premise serving** of a medical LLM (Generat
 - On-prem serving — LLM on hospital closed-network / self-hosted GPU, **redundant dual-server setup for 100+ concurrent users** (key strength)
 - Fine-tuning open-weight LLMs up to **100B+ parameters** (LoRA, RL: DPO/GRPO); multi-GPU distributed training; sized serving configurations to the available GPU budget
 - Quantization (GPTQ/AWQ/W4A16) for speed & VRAM — built an AWQ recipe for a model family with no published recipe, ~2.5× faster inference
-- vLLM serving & reproducibility debugging; stabilized structured (JSON) output via GBNF constrained decoding; serving image build 30 min → 11 s
+- vLLM serving & reproducibility debugging; stabilized structured (JSON) output via GBNF constrained decoding.
 - Clinical-document summarization backend — long-document handling and repetition control, standardized error-code spec
 - Hospital record pipelines — fine-tuned an LLM on real records, on-prem; on-site demos
 - **Introduced & established vLLM** as the team's LLM serving stack (structured output, serving image, quantized serving); upgraded embedding & reranker models (separate KO/EN embeddings) for retrieval quality
@@ -63,7 +63,7 @@ AI/ML engineer on a multi-modal conversational AI service — built and shipped 
   - **Kaggle math-problem classification — 3rd place** (May 2025). Reframed generative classification as **constrained decoding** — a Logits Processor restricts output to label tokens, temperature=0 · max_tokens=1, eliminating format errors. → [Official 3rd-place solution writeup](https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution)
   - **Kaggle AIMO Progress Prize 2 — 🥈 Silver** (Mar 2025). Fine-tuned and quantized a reasoning model for batch inference; multi-sample majority-vote self-consistency under a strict token budget.
   - **Kaggle ARC Prize 2024 — 🥉 Bronze** (Nov 2024). Abstract reasoning on unseen tasks.
-- **Zindi · FAO/ITU satellite aquaculture-pond detection — 13th / 624** (Aug 2026). Heavy domain shift between train and test, so I validated directly on the leaderboard: **test-time self-training** raised the public score **0.916 → 0.941**, and picking final submissions for variance rather than rank survived the private shakeup.
+- **Zindi · FAO/ITU satellite aquaculture-pond detection — 13th** (Aug 2026). Heavy domain shift between train and test, so I validated directly on the leaderboard: **test-time self-training** raised the public score **0.916 → 0.941**, and picking final submissions for variance rather than rank survived the private shakeup.
 
 *Also: Eedi · Nemotron · Deep Past and other LLM inference-optimization competitions.*
 

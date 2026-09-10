@@ -12,11 +12,11 @@
 - **병원 폐쇄망 온프레미스 의료 LLM 서빙 — 동시접속 100명 이상(자가 GPU 서버).**
 - LLM 파인튜닝(SFT·LoRA, RL: DPO/GRPO)·양자화(GPTQ/AWQ/W4A16)·vLLM 서빙까지 전 과정 수행. 100B+ 파라미터 오픈 가중치 모델 파인튜닝.
 - Kaggle Competitions Expert(**전 세계 상위 0.2%**)
-  - OpenAI AI Agent Security **🥇 13위**
+  - OpenAI AI Agent Security **🥇 금메달**
   - 수학문제 분류 **3위**
   - AIMO Progress Prize 2 **🥈 은메달**
   - ARC Prize 2024 **🥉 동메달**
-  - Zindi · FAO/ITU 위성 양식장 탐지 **13위 / 624팀**
+  - Zindi · FAO/ITU 위성 양식장 탐지 **13위**
 
 ---
 
@@ -29,7 +29,7 @@
 - 온프레미스 서빙 — 병원 폐쇄망/자가 GPU 서버에 LLM 배포, **100명 이상 동시접속용 이중화 서버 구성**
 - **100B+ 파라미터** 오픈 가중치 LLM 파인튜닝(LoRA, RL: DPO/GRPO). 멀티 GPU 분산학습. 가용 GPU 예산에 맞춘 서빙 구성 설계
 - 양자화(GPTQ/AWQ/W4A16)로 속도·VRAM 최적화 — 공개 레시피가 없던 모델군의 AWQ 레시피를 직접 구축, 추론 속도 약 2.5배 향상
-- vLLM 서빙 안정화·재현성 확보. GBNF constrained decoding으로 구조화(JSON) 출력 안정화. 서빙 이미지 빌드 30분 → 11초
+- vLLM 서빙 안정화·재현성 확보. GBNF constrained decoding으로 구조화(JSON) 출력 안정화.
 - 진료문서 요약 백엔드 — 장문 요약 처리 및 생성 안정화, 에러코드 스펙 표준화
 - 병원 의무기록 파이프라인 구축·운영. 실기록 기반 LLM 파인튜닝(온프레미스). 병원 현장 시연
 - 팀의 LLM 서빙 스택으로 **vLLM 도입·정착**(구조화 출력, 서빙 이미지, 양자화 서빙). 임베딩·리랭커 모델 교체로 검색 품질 개선(한/영 임베딩 분리)
@@ -76,7 +76,7 @@
   - **Kaggle 수학문제 분류 — 3위**(2025년 5월). 생성형 분류를 **constrained decoding**으로 재구성 — Logits Processor가 출력을 라벨 토큰으로 제한, temperature=0·max_tokens=1로 형식 오류 제거. → [공식 3위 솔루션 라이트업](https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution)
   - **Kaggle AIMO Progress Prize 2 — 🥈 은메달**(2025년 3월). 배치 추론용 추론 모델 파인튜닝·양자화. 엄격한 토큰 예산 안에서 다중 샘플 majority-vote self-consistency.
   - **Kaggle ARC Prize 2024 — 🥉 동메달**(2024년 11월). 미지의 태스크에 대한 추상 추론.
-- **Zindi · FAO/ITU 위성 양식장 탐지 — 13위 / 624팀**(2026년 8월). 학습/테스트 간 도메인 차이가 커서 리더보드로 직접 검증: **테스트타임 자가학습**으로 공개 점수 **0.916 → 0.941** 향상. 순위보다 분산 기준으로 최종 제출을 골라 프라이빗 반전을 버팀.
+- **Zindi · FAO/ITU 위성 양식장 탐지 — 13위**(2026년 8월). 학습/테스트 간 도메인 차이가 커서 리더보드로 직접 검증: **테스트타임 자가학습**으로 공개 점수 **0.916 → 0.941** 향상. 순위보다 분산 기준으로 최종 제출을 골라 프라이빗 반전을 버팀.
 
 *그 외: Eedi·Nemotron·Deep Past 등 LLM 추론 최적화 컴페티션 참가.*
 
