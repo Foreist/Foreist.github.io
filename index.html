@@ -124,10 +124,9 @@
 <section>
   <h2 data-i18n="sum_h">요약</h2>
   <ul>
-    <li data-i18n="sum1"><b>병원 폐쇄망 안 자가 GPU 서버로 의료 LLM 서빙 — 동시접속 100명 이상.</b> 외부 클라우드 API를 쓸 수 없는 환경이라 학습→양자화→서빙까지 전부 온프레미스로 직접 돌린다.</li>
-    <li data-i18n="sum2">엔드투엔드 LLM: 파인튜닝(SFT·LoRA, RL: DPO/GRPO), 양자화(GPTQ/AWQ/W4A16), vLLM 서빙. 100B+ 파라미터 오픈 가중치 LLM 파인튜닝 경험.</li>
-    <li data-i18n="sum3">Kaggle Competitions Expert(<span class="hl">전 세계 상위 0.2%</span>) — OpenAI AI Agent Security <span class="hl">🥇 13위</span>, 수학문제 분류 <span class="hl">3위</span>, AIMO Progress Prize 2 <span class="hl">🥈 은메달</span>, ARC Prize 2024 <span class="hl">🥉 동메달</span>. Zindi · FAO/ITU 위성 양식장 탐지 <span class="hl">상위 3%</span>.</li>
-    <li data-i18n="sum4">일관된 의료 도메인 커리어: 한국어 의료 NLP → 정밀의료 R&amp;D → 의료 LLM(6년 10개월).</li>
+    <li data-i18n="sum1"><b>병원 폐쇄망 온프레미스 의료 LLM 서빙 — 동시접속 100명 이상(자가 GPU 서버).</b></li>
+    <li data-i18n="sum2">LLM은 파인튜닝(SFT·LoRA, RL: DPO/GRPO)부터 양자화(GPTQ/AWQ/W4A16), vLLM 서빙까지 혼자 붙는다. 100B+ 파라미터 오픈 가중치 모델도 파인튜닝해봤다.</li>
+    <li data-i18n="sum3">Kaggle Competitions Expert(<span class="hl">전 세계 상위 0.2%</span>)<ul><li>OpenAI AI Agent Security <span class="hl">🥇 13위</span></li><li>수학문제 분류 <span class="hl">3위</span></li><li>AIMO Progress Prize 2 <span class="hl">🥈 은메달</span></li><li>ARC Prize 2024 <span class="hl">🥉 동메달</span></li><li>Zindi · FAO/ITU 위성 양식장 탐지 <span class="hl">상위 3%</span></li></ul></li>
   </ul>
 </section>
 
@@ -136,15 +135,15 @@
   <div class="job">
     <h3 data-i18n="exp_title">퍼즐에이아이 — AI / NLP 연구원</h3>
     <div class="meta" data-i18n="exp_meta">2019년 11월 ~ 2026년 9월 · 6년 10개월</div>
-    <p class="win" data-i18n="exp_win">의료 LLM(생성형 의무기록)의 학습·양자화·<span class="hl">온프레미스 서빙</span>을 맡았다 — <span class="hl">동시접속 100명 이상, 병원 폐쇄망 내부 배포</span>(클라우드 사용 불가).</p>
+    <p class="win" data-i18n="exp_win">의료 LLM(생성형 의무기록)의 학습·양자화·<span class="hl">온프레미스 서빙</span>을 진행했다 — <span class="hl">동시접속 100명 이상, 병원 폐쇄망 내부 배포</span>.</p>
     <ul>
-      <li data-i18n="exp1"><b>온프레미스 서빙</b> — 병원 폐쇄망/자가 GPU 서버에 LLM 배포, <b>100명 이상 동시접속용 이중화 서버 구성</b>(핵심 강점)</li>
+      <li data-i18n="exp1"><b>온프레미스 서빙</b> — 병원 폐쇄망/자가 GPU 서버에 LLM 배포, <b>100명 이상 동시접속용 이중화 서버 구성</b></li>
       <li data-i18n="exp2"><b>100B+ 파라미터</b> 오픈 가중치 LLM 파인튜닝(LoRA, RL: DPO/GRPO). 멀티 GPU 분산학습. 가용 GPU 예산에 맞춘 서빙 구성 설계</li>
-      <li data-i18n="exp3">속도·VRAM 최적화를 위한 양자화(GPTQ/AWQ/W4A16) — 공개 레시피가 없던 모델군의 AWQ 레시피를 직접 구축, 추론 속도 약 2.5배 향상</li>
+      <li data-i18n="exp3">양자화(GPTQ/AWQ/W4A16)로 속도·VRAM 최적화 — 공개 레시피가 없던 모델군의 AWQ 레시피를 직접 구축, 추론 속도 약 2.5배 향상</li>
       <li data-i18n="exp4">vLLM 서빙 안정화·재현성 확보. GBNF constrained decoding으로 구조화(JSON) 출력 안정화. 서빙 이미지 빌드 30분 → 11초</li>
       <li data-i18n="exp5">진료문서 요약 백엔드 — 장문 요약 처리 및 생성 안정화, 에러코드 스펙 표준화</li>
       <li data-i18n="exp6">병원 의무기록 파이프라인 구축·운영. 실기록 기반 LLM 파인튜닝(온프레미스). 병원 현장 시연</li>
-      <li data-i18n="exp7">팀의 LLM 서빙 스택으로 <b>vLLM 도입·정착</b>(구조화 출력, 서빙 이미지, 양자화 서빙). 검색 품질 향상을 위한 임베딩·리랭커 모델 교체(한/영 임베딩 분리)</li>
+      <li data-i18n="exp7">팀의 LLM 서빙 스택으로 <b>vLLM 도입·정착</b>(구조화 출력, 서빙 이미지, 양자화 서빙). 임베딩·리랭커 모델을 교체해 검색 품질을 끌어올림(한/영 임베딩 분리)</li>
       <li data-i18n="exp8"><b>경량 LLM 기반 CDSS</b>(2023.10~2024.12) — 병원용 임상 의사결정 지원: GPT로 학습데이터 생성·라벨링, 오픈 LLM 파인튜닝 후 온프레미스 배포 형태로 변환</li>
       <li data-i18n="exp9"><b>정밀의료 R&amp;D</b>(2020.11~2023.02, 대학병원 공동연구) — 혈액암 변이 연구: 문헌조사, 데이터 수집·전처리·분석·모델링</li>
       <li data-i18n="exp10">초기(2019.11~2020): 한국어 의료 NLP — 증상 추출 및 의료 텍스트 분류</li>
@@ -168,12 +167,12 @@
   <div class="job">
     <h3 data-i18n="p1t">뷰티/헬스 AI 제품 (사이드 프로젝트)</h3>
     <div class="meta" data-i18n="p1m">2025년 9월 ~ 현재</div>
-    <p class="win" data-i18n="p1w">뷰티/헬스 AI 제품 개발 주도 — 실시간 음성 어시스턴트, 두피/피부 진단 CV, 온디바이스 숏폼 자동생성을 실제 출시. 스펙·리뷰는 직접, 구현의 대부분은 <b>AI 코딩 에이전트</b>가 담당.</p>
+    <p class="win" data-i18n="p1w">뷰티/헬스 AI 제품 개발을 이끌었다 — 실시간 음성 어시스턴트, 두피/피부 진단 CV, 온디바이스 숏폼 자동생성을 실제 출시. 스펙·리뷰는 직접 하고 구현의 대부분은 <b>AI 코딩 에이전트</b>로 돌렸다.</p>
     <ul>
       <li data-i18n="p1l1">실시간 <b>앰비언트 음성 어시스턴트</b> — 실시간 STT/번역, 문장 경계·엔드포인트 튜닝</li>
       <li data-i18n="p1l2"><b>두피 진단 CV</b> — 공개 벤치마크 재현 후 추월(macro-F1 <span class="hl">0.744</span> vs 0.689)</li>
       <li data-i18n="p1l3"><b>얼굴 피부 진단(8개 속성)</b> — 속성별 순서형 등급 모델. 배포 MAE <b>~0.49</b>, <b>±1등급 이내 ~94%</b></li>
-      <li data-i18n="p1l4">배포 정확도를 위한 학습/추론 전처리 튜닝 → <b>온디바이스 8개 모델</b> 출시</li>
+      <li data-i18n="p1l4">학습·추론 전처리를 맞춰 배포 정확도를 끌어올리고 <b>온디바이스 8개 모델</b> 출시</li>
       <li data-i18n="p1l5"><b>온디바이스 숏폼 자동생성·렌더링</b> — 생성 진행 UI, 동적 편집(페이드아웃, 정지프레임 트림, 구간 클램핑), 배경음악, 세션 유지</li>
     </ul>
     <div class="chips"><span class="chip">AI agents</span><span class="chip">real-time voice</span><span class="chip">PyTorch</span><span class="chip">ffmpeg</span></div>
@@ -186,7 +185,7 @@
       <li data-i18n="p3l1"><b>감정 분류기</b> — 직접 ~1,500건 라벨링, 7-class, <span class="hl">CPU 추론 0.06초</span>. 하이퍼파라미터 탐색</li>
       <li data-i18n="p3l2"><b>멀티모달 AI</b> — TTS/음성 클로닝, 토킹헤드 영상, 이미지 캡셔닝, 음성 향상, 이미지 생성(API 연동+튜닝)</li>
       <li data-i18n="p3l3"><b>NLP 툴링</b> — 임베딩 유사도 기반 반복 회피, 비속어/텍스트 모더레이션, 문장 분리</li>
-      <li data-i18n="p3l4">다단계 캐릭터 생성 프롬프트 엔지니어링. 클로즈드 베타(100명) 데이터 분석. 엔드투엔드 서비스 QA·출시 테스트</li>
+      <li data-i18n="p3l4">다단계 캐릭터 생성 프롬프트 엔지니어링. 클로즈드 베타(100명) 데이터 분석. 서비스 전체 QA·출시 테스트</li>
     </ul>
     <div class="chips"><span class="chip">NLP</span><span class="chip">multi-modal AI</span><span class="chip">prompt engineering</span><span class="chip">data labeling</span><span class="chip">QA</span></div>
   </div>
@@ -222,7 +221,7 @@
   <div class="skillrow"><b>LLM / GenAI</b><span data-i18n="sk2t">파인튜닝·학습(SFT·LoRA), RL(DPO/GRPO) 경험, 양자화(GPTQ/AWQ/W4A16), vLLM 서빙·온프레미스 배포, 구조화(JSON) 출력 수정, RAG·검색(임베딩 검색·리랭킹)</span></div>
   <div class="skillrow"><b data-i18n="sk3l">NLP / CV / 데이터</b><span data-i18n="sk3t">한국어 의료 텍스트 처리/분류 · PyTorch 이미지분류 모델 학습·논문 재현 · 데이터 분석(pandas)·라벨링</span></div>
   <div class="skillrow"><b data-i18n="sk4l">서빙 / 인프라</b><span data-i18n="sk4t">vLLM·FastAPI, Docker, Kubernetes, <b>온프레미스(폐쇄망) GPU 서빙</b>, W&amp;B</span></div>
-  <div class="skillrow"><b data-i18n="sk5l">AI 에이전트</b><span data-i18n="sk5t"><b>AI 코딩 에이전트(Claude, GPT/Codex) 적극 활용</b> — 스펙·아키텍처·리뷰·검증은 직접, 대규모 구현은 에이전트로 주도. (퍼즐에이아이 초기/중기 코드, 캐글 솔루션, 데이터 라벨링·모델 학습은 전부 직접 했다.)</span></div>
+  <div class="skillrow"><b data-i18n="sk5l">AI 에이전트</b><span data-i18n="sk5t"><b>AI 코딩 에이전트(Claude, GPT/Codex)를 쓴다</b> — 스펙·아키텍처·리뷰·검증은 직접 하고, 덩치 큰 구현만 에이전트로 돌린다. (퍼즐에이아이 초기/중기 코드, 캐글 솔루션, 데이터 라벨링·모델 학습은 전부 직접 했다.)</span></div>
 </section>
 
 <section>
@@ -230,7 +229,7 @@
   <div class="job">
     <h3><span data-i18n="comm_t">learnup 스터디 — 운영자/리더</span> <span style="font-weight:400;color:var(--mut);font-size:14px" data-i18n="comm_t2">· 소모임 앱</span></h3>
     <div class="meta" data-i18n="comm_m">2025년 2월 ~ 2026년 4월 · 1주년 2026년 1월 30일</div>
-    <ul><li data-i18n="comm1">50명 이상 모임을 1년 넘게 유지·성장. 평일 퇴근 후 카페 오프라인 데일리 모임 운영 — 일정·장소·진행 총괄</li></ul>
+    <ul><li data-i18n="comm1">50명 넘는 모임을 1년 넘게 굴렸다. 평일 퇴근 후 카페에서 매일 오프라인으로 모이고, 일정·장소·진행을 직접 챙긴다</li></ul>
   </div>
 </section>
 
@@ -265,15 +264,14 @@ s2s: "Kaggle Competitions Expert",
 s3b: "\ud83e\udd47 1 \u00B7 \ud83e\udd48 1 \u00B7 \ud83e\udd49 1",
 s3s: "Kaggle competition medals",
 sum_h: "Summary",
-sum1: "<b>On-premise medical LLM serving \u2014 100+ concurrent users inside hospital closed networks (self-hosted GPU).</b> External cloud APIs are unusable there, so the full train\u2192quantize\u2192serve loop runs on-prem, end to end.",
+sum1: "<b>On-premise medical LLM serving inside hospital closed networks \u2014 100+ concurrent users (self-hosted GPU).</b>",
 sum2: "End-to-end LLM: fine-tuning (SFT\u00B7LoRA, RL: DPO/GRPO), quantization (GPTQ/AWQ/W4A16), vLLM serving; fine-tuned open-weight LLMs up to 100B+ parameters.",
-sum3: "Kaggle Competitions Expert (<span class=\"hl\">top 0.2%</span> worldwide) \u2014 OpenAI AI Agent Security <span class=\"hl\">\ud83e\udd47 13th</span>, math-problem classification <span class=\"hl\">3rd</span>, AIMO Progress Prize 2 <span class=\"hl\">\ud83e\udd48 Silver</span>, ARC Prize 2024 <span class=\"hl\">\ud83e\udd49 Bronze</span>. Zindi \u00B7 FAO/ITU satellite pond detection <span class=\"hl\">top 3%</span>.",
-sum4: "Consistent medical-domain track: Korean medical NLP \u2192 precision-medicine R&D \u2192 medical LLM (6 yrs 10 mo).",
+sum3: "Kaggle Competitions Expert (<span class=\"hl\">top 0.2%</span> worldwide)<ul><li>OpenAI AI Agent Security <span class=\"hl\">\ud83e\udd47 13th</span></li><li>Math-problem classification <span class=\"hl\">3rd</span></li><li>AIMO Progress Prize 2 <span class=\"hl\">\ud83e\udd48 Silver</span></li><li>ARC Prize 2024 <span class=\"hl\">\ud83e\udd49 Bronze</span></li><li>Zindi \u00B7 FAO/ITU satellite pond detection <span class=\"hl\">top 3%</span></li></ul>",
 exp_h: "Experience",
 exp_title: "Puzzle AI \u2014 AI / NLP Researcher",
 exp_meta: "Nov 2019 \u2013 Sep 2026 \u00B7 6 yrs 10 mo",
-exp_win: "Owns training, quantization and <span class=\"hl\">on-premise serving</span> of a medical LLM (Generative Medical Record) \u2014 <span class=\"hl\">100+ concurrent users, deployed inside hospital closed networks</span> (cloud not allowed).",
-exp1: "<b>On-prem serving</b> \u2014 LLM on hospital closed-network / self-hosted GPU, <b>redundant dual-server setup for 100+ concurrent users</b> (key strength)",
+exp_win: "Owns training, quantization and <span class=\"hl\">on-premise serving</span> of a medical LLM (Generative Medical Record) \u2014 <span class=\"hl\">100+ concurrent users, deployed inside hospital closed networks</span>.",
+exp1: "<b>On-prem serving</b> \u2014 LLM on hospital closed-network / self-hosted GPU, <b>redundant dual-server setup for 100+ concurrent users</b>",
 exp2: "Fine-tuning open-weight LLMs up to <b>100B+ parameters</b> (LoRA, RL: DPO/GRPO); multi-GPU distributed training; sized serving configurations to the available GPU budget",
 exp3: "Quantization (GPTQ/AWQ/W4A16) for speed & VRAM \u2014 built an AWQ recipe for a model family with no published recipe, ~2.5\u00D7 faster inference",
 exp4: "vLLM serving & reproducibility debugging; stabilized structured (JSON) output via GBNF constrained decoding; serving image build 30 min \u2192 11 s",
