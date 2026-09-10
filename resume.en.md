@@ -63,7 +63,7 @@ AI/ML engineer on a multi-modal conversational AI service — built and shipped 
   - **Kaggle math-problem classification — 3rd place** (May 2025). Reframed generative classification as **constrained decoding** — a Logits Processor restricts output to label tokens, temperature=0 · max_tokens=1, eliminating format errors. → [Official 3rd-place solution writeup](https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution)
   - **Kaggle AIMO Progress Prize 2 — 🥈 Silver** (Mar 2025). Fine-tuned and quantized a reasoning model for batch inference; multi-sample majority-vote self-consistency under a strict token budget.
   - **Kaggle ARC Prize 2024 — 🥉 Bronze** (Nov 2024). Abstract reasoning on unseen tasks.
-- **Zindi · FAO/ITU satellite aquaculture-pond detection — top 3%** (Aug 2026). Heavy domain shift between train and test, so I validated directly on the leaderboard: **test-time self-training** raised the public score **0.916 → 0.941**, and picking final submissions for variance rather than rank survived the private shakeup.
+- **Zindi · FAO/ITU satellite aquaculture-pond detection — 13th / 624** (Aug 2026). Heavy domain shift between train and test, so I validated directly on the leaderboard: **test-time self-training** raised the public score **0.916 → 0.941**, and picking final submissions for variance rather than rank survived the private shakeup.
 
 *Also: Eedi · Nemotron · Deep Past and other LLM inference-optimization competitions.*
 

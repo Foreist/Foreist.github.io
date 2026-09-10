@@ -16,7 +16,7 @@
   - 수학문제 분류 **3위**
   - AIMO Progress Prize 2 **🥈 은메달**
   - ARC Prize 2024 **🥉 동메달**
-  - Zindi · FAO/ITU 위성 양식장 탐지 **상위 3%**
+  - Zindi · FAO/ITU 위성 양식장 탐지 **13위 / 624팀**
 
 ---
 
@@ -76,7 +76,7 @@
   - **Kaggle 수학문제 분류 — 3위**(2025년 5월). 생성형 분류를 **constrained decoding**으로 재구성 — Logits Processor가 출력을 라벨 토큰으로 제한, temperature=0·max_tokens=1로 형식 오류 제거. → [공식 3위 솔루션 라이트업](https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution)
   - **Kaggle AIMO Progress Prize 2 — 🥈 은메달**(2025년 3월). 배치 추론용 추론 모델 파인튜닝·양자화. 엄격한 토큰 예산 안에서 다중 샘플 majority-vote self-consistency.
   - **Kaggle ARC Prize 2024 — 🥉 동메달**(2024년 11월). 미지의 태스크에 대한 추상 추론.
-- **Zindi · FAO/ITU 위성 양식장 탐지 — 상위 3%**(2026년 8월). 학습/테스트 간 도메인 차이가 커서 리더보드로 직접 검증: **테스트타임 자가학습**으로 공개 점수 **0.916 → 0.941** 향상. 순위보다 분산 기준으로 최종 제출을 골라 프라이빗 반전을 버팀.
+- **Zindi · FAO/ITU 위성 양식장 탐지 — 13위 / 624팀**(2026년 8월). 학습/테스트 간 도메인 차이가 커서 리더보드로 직접 검증: **테스트타임 자가학습**으로 공개 점수 **0.916 → 0.941** 향상. 순위보다 분산 기준으로 최종 제출을 골라 프라이빗 반전을 버팀.
 
 *그 외: Eedi·Nemotron·Deep Past 등 LLM 추론 최적화 컴페티션 참가.*
 
