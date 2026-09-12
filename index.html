@@ -21,6 +21,391 @@
     color-scheme:light dark;
     --accent:#4f46e5;--accent:light-dark(#4f46e5,#a5b4fc);
     --accent-soft:#eef2ff;--accent-soft:light-dark(#eef2ff,#312e81);
+    --link:#0369a1;--link:light-dark(#0369a1,#7dd3fc);
+    --link-soft:#e0f2fe;--link-soft:light-dark(#e0f2fe,#0c4a6e);
+    --action:#171717;--action:light-dark(#171717,#ededed);
+    --on-action:#ffffff;--on-action:light-dark(#ffffff,#171717);
+    --body:#f1f1f1;--body:light-dark(#f1f1f1,#0f0f10);
+    --surface:#ffffff;--surface:light-dark(#ffffff,#1b1b1c);
+    --fg:#171717;--fg:light-dark(#171717,#ededed);
+    --mut:#737373;--mut:light-dark(#737373,#a3a3a3);
+    --border:#e5e5e5;--border:light-dark(#e5e5e5,#2e2e30);
+    --chip:#f5f5f5;--chip:light-dark(#f5f5f5,#2a2a2c);
+    --gold:#b45309;--gold:light-dark(#b45309,#fbbf24);
+    --gold-bg:#fffbeb;--gold-bg:light-dark(#fffbeb,#3a2e10);
+    --r-card:14px;--r-el:9px;
+    --shadow:0 1px 2px light-dark(rgba(0,0,0,.05),rgba(0,0,0,.4)),0 4px 16px light-dark(rgba(0,0,0,.04),rgba(0,0,0,.25));
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--font);color:var(--fg);background:var(--body);
+    line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:840px;margin:0 auto;padding-inline:22px}
+  .skip-link{position:fixed;inset-block-start:10px;inset-inline-start:10px;z-index:100;
+    padding:10px 14px;background:var(--action);color:var(--on-action);border-radius:var(--r-el);
+    transform:translateY(-160%);text-decoration:none}
+  .skip-link:focus{transform:translateY(0)}
+  header .wrap{position:relative}
+  .langswitch{position:absolute;inset-block-start:0;inset-inline-end:22px;display:flex;gap:8px}
+  .langswitch button{min-height:40px;background:var(--surface);border:1px solid var(--border);color:var(--mut);
+    border-radius:20px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+  .langswitch button.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+  .hero-row{display:flex;gap:28px;align-items:center}
+  .avatar{flex:0 0 122px;width:122px;height:122px;border-radius:50%;overflow:hidden;
+    background:linear-gradient(135deg,var(--accent),#8b5cf6);color:#fff;display:grid;place-items:center;
+    font-size:38px;font-weight:800;border:0;box-shadow:var(--shadow);outline:1px solid rgba(0,0,0,.1);
+    outline-color:light-dark(oklch(0 0 0 / .1),oklch(1 0 0 / .1))}
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(1.09) contrast(1.03) saturate(1.03)}
+  @media(max-width:600px){.hero-row{flex-direction:column;gap:16px;text-align:center}
+    .avatar{width:104px;height:104px;flex-basis:104px}.stats{margin:24px auto 0}
+    .langswitch{position:static;justify-content:center;margin-block-end:14px}}
+  header{padding:56px 0 30px}
+  .kicker{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{margin:10px 0 4px;font-size:38px;font-weight:800;letter-spacing:-1.2px;text-wrap:balance}
+  h1 small{font-size:15px;font-weight:400;color:var(--mut);margin-inline-start:8px;letter-spacing:0}
+  .role{font-size:16.5px;font-weight:600;text-wrap:balance}
+  .lead{color:var(--mut);margin:12px 0 0;max-width:660px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-el);padding:12px 14px;box-shadow:var(--shadow)}
+  .stat b{display:block;font-size:19px;font-weight:800;letter-spacing:-.5px}
+  .stat span{font-size:11.5px;color:var(--mut)}
+  main{padding:14px 0 64px}
+  section{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);padding:22px 26px;margin:14px 0;box-shadow:var(--shadow)}
+  h2{display:flex;align-items:center;gap:9px;font-size:18px;letter-spacing:-.25px;color:var(--accent);margin:0 0 18px;font-weight:750;text-wrap:balance}
+  h2::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--accent);flex:none}
+  h3{font-size:16.5px;margin:0 0 3px;font-weight:700;text-wrap:balance}
+  .meta{color:var(--mut);font-size:13px;margin-bottom:9px;font-weight:500;font-variant-numeric:tabular-nums}
+  ul{margin:8px 0 0;padding-inline-start:19px}li{margin:5px 0}li::marker{color:var(--accent)}
+  .job{padding:0}.job+.job{margin-top:28px}
+  .win{font-weight:600}.hl{color:var(--accent);font-weight:700}
+  .win,.job li,section>ul>li,.skillrow span{max-width:75ch;text-wrap:pretty}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+  .chip{background:var(--chip);border:1px solid var(--border);border-radius:var(--r-el);padding:3px 10px;font-size:12px}
+  .kg{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .rank{background:var(--gold-bg);color:var(--gold);border:1px solid var(--gold);font-weight:700;font-size:12px;padding:2px 10px;border-radius:20px;white-space:nowrap}
+  .certs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+  .certs figure{margin:0}
+  .certs img{width:100%;border:0;border-radius:var(--r-el);box-shadow:var(--shadow);display:block;
+    outline:1px solid rgba(0,0,0,.1);outline-color:light-dark(oklch(0 0 0 / .1),oklch(1 0 0 / .1))}
+  .certs figcaption{font-size:12px;color:var(--mut);margin-top:6px;text-align:center;text-wrap:pretty}
+  .badge{display:inline-flex;align-items:center;min-height:40px;background:var(--link-soft);color:var(--link);border:1px solid var(--link);border-radius:20px;padding:7px 13px;font-size:13px;font-weight:650;text-decoration:none}
+  .btn{display:inline-flex;align-items:center;min-height:44px;margin-top:14px;background:var(--action);color:var(--on-action);border:none;border-radius:var(--r-el);padding:9px 17px;font-size:13.5px;font-weight:650;cursor:pointer;font-family:inherit;box-shadow:var(--shadow)}
+  @media print{.btn,.langswitch,.skip-link{display:none}}
+  @media(max-width:700px){.certs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:520px){.certs{grid-template-columns:1fr}}
+  .skillrow{margin:9px 0;display:flex;gap:14px}
+  .skillrow b{flex:0 0 116px;color:var(--accent);font-weight:600;font-size:13px}
+  .skillrow span{flex:1}
+  code{background:var(--chip);border:1px solid var(--border);padding:1px 6px;border-radius:5px;font-size:12.5px}
+  a{color:var(--link);font-weight:500;text-decoration:underline;text-decoration-thickness:.08em;text-underline-offset:.18em}
+  .badge,.btn{text-decoration:none}
+  .links{margin-top:10px;font-size:13.5px}.links a{margin-inline-end:14px}
+  footer{color:var(--mut);font-size:12.5px;text-align:center;padding:6px 0 48px}
+  :focus-visible{outline:3px solid var(--link);outline-offset:3px}
+  @media(hover:hover){a:hover{text-decoration-thickness:.14em}.btn:hover{filter:brightness(1.08)}}
+  @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}.btn:active,.badge:active,.langswitch button:active{transform:scale(.96)}}
+  @media(max-width:600px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat:last-child:nth-child(odd){grid-column:1/-1}h1{font-size:31px}.skillrow{flex-direction:column;gap:2px}.skillrow b{flex:none}}
+  @media(max-width:420px){.wrap{padding-inline:12px}section{padding:20px 18px}.stats{grid-template-columns:1fr}.stat:last-child:nth-child(odd){grid-column:auto}}
+  @media print{:root{color-scheme:light}body{background:#fff}section,.stat{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="skip">본문으로 건너뛰기</a>
+
+<header><div class="wrap">
+  <div class="langswitch" role="group" aria-label="Language">
+    <button id="btn-ko" class="on" type="button" aria-pressed="true" onclick="setLang('ko')">한국어</button>
+    <button id="btn-en" type="button" aria-pressed="false" onclick="setLang('en')">English</button>
+  </div>
+  <div class="hero-row">
+  <div class="avatar"><img src="assets/profile.jpg" alt="김태웅" onerror="this.replaceWith(document.createTextNode('KTW'))"></div>
+  <div>
+  <div class="kicker" data-i18n="kicker">AI / NLP 연구자 · 의료 LLM</div>
+  <h1><span data-i18n="name">김태웅</span> <small data-i18n="name_en">Kim Taewoong</small></h1>
+  <div class="role" data-i18n="role">의료 LLM(생성형 의무기록) — 연구 및 온프레미스 서빙</div>
+  <div class="links">
+    <a class="badge" href="https://www.kaggle.com/aleaiest" target="_blank" data-i18n="badge">🏅 Kaggle Competitions Expert · 전 세계 상위 0.2% · 🥇 1 · 🥈 1 · 🥉 1</a>
+  </div>
+  <div><button class="btn" type="button" onclick="window.print()" data-i18n="print">인쇄 / PDF 저장</button></div>
+  <div class="stats">
+    <div class="stat"><b data-i18n="s1b">100+</b><span data-i18n="s1s">동시접속자 (온프레미스)</span></div>
+    <div class="stat"><b data-i18n="s2b">상위 0.2%</b><span data-i18n="s2s">Kaggle Competitions Expert</span></div>
+    <div class="stat"><b data-i18n="s3b">🥇 1 · 🥈 1 · 🥉 1</b><span data-i18n="s3s">Kaggle 컴페티션 메달</span></div>
+  </div>
+  </div>
+</div></div></header>
+
+<main id="main" class="wrap" tabindex="-1">
+
+<section>
+  <h2 data-i18n="sum_h">요약</h2>
+  <ul>
+    <li data-i18n="sum1"><b>병원 폐쇄망 온프레미스 의료 LLM 서빙 — 동시접속 100명 이상(자가 GPU 서버).</b></li>
+    <li data-i18n="sum2">LLM 파인튜닝(SFT·LoRA, RL: DPO/GRPO)·양자화(GPTQ/AWQ/W4A16)·vLLM 서빙까지 전 과정 수행. 100B+ 파라미터 오픈 가중치 모델 파인튜닝.</li>
+    <li data-i18n="sum3">Kaggle Competitions Expert(<span class="hl">전 세계 상위 0.2%</span>)<ul><li>OpenAI AI Agent Security <span class="hl">🥇 금메달</span></li><li>수학문제 분류 <span class="hl">3위</span></li><li>AIMO Progress Prize 2 <span class="hl">🥈 은메달</span></li><li>ARC Prize 2024 <span class="hl">🥉 동메달</span></li><li>Zindi · FAO/ITU 위성 양식장 탐지 <span class="hl">13위</span></li></ul></li>
+  </ul>
+</section>
+
+<section>
+  <h2 data-i18n="exp_h">경력</h2>
+  <div class="job">
+    <h3 data-i18n="exp_title">퍼즐에이아이 — AI / NLP 연구원</h3>
+    <div class="meta" data-i18n="exp_meta">2019년 11월 ~ 2026년 9월 · 6년 10개월</div>
+    <p class="win" data-i18n="exp_win">의료 LLM(생성형 의무기록)의 학습·양자화·<span class="hl">온프레미스 서빙</span>을 담당 — <span class="hl">동시접속 100명 이상, 병원 폐쇄망 내부 배포</span>.</p>
+    <ul>
+      <li data-i18n="exp1"><b>온프레미스 서빙</b> — 병원 폐쇄망/자가 GPU 서버에 LLM 배포, <b>100명 이상 동시접속용 이중화 서버 구성</b></li>
+      <li data-i18n="exp2"><b>100B+ 파라미터</b> 오픈 가중치 LLM 파인튜닝(LoRA, RL: DPO/GRPO). 멀티 GPU 분산학습. 가용 GPU 예산에 맞춘 서빙 구성 설계</li>
+      <li data-i18n="exp3">양자화(GPTQ/AWQ/W4A16)로 속도·VRAM 최적화 — 공개 레시피가 없던 모델군의 AWQ 레시피를 직접 구축, 추론 속도 약 2.5배 향상</li>
+      <li data-i18n="exp4">vLLM 서빙 안정화·재현성 확보. GBNF constrained decoding으로 구조화(JSON) 출력 안정화.</li>
+      <li data-i18n="exp5">진료문서 요약 백엔드 — 장문 요약 처리 및 생성 안정화, 에러코드 스펙 표준화</li>
+      <li data-i18n="exp6">병원 의무기록 파이프라인 구축·운영. 실기록 기반 LLM 파인튜닝(온프레미스). 병원 현장 시연</li>
+      <li data-i18n="exp7">팀의 LLM 서빙 스택으로 <b>vLLM 도입·정착</b>(구조화 출력, 서빙 이미지, 양자화 서빙). 임베딩·리랭커 모델 교체로 검색 품질 개선(한/영 임베딩 분리)</li>
+      <li data-i18n="exp8"><b>경량 LLM 기반 CDSS</b>(2023.10~2024.12) — 병원용 임상 의사결정 지원: GPT로 학습데이터 생성·라벨링, 오픈 LLM 파인튜닝 후 온프레미스 배포 형태로 변환</li>
+      <li data-i18n="exp9"><b>정밀의료 R&amp;D</b>(2020.11~2023.02, 대학병원 공동연구) — 혈액암 변이 연구: 문헌조사, 데이터 수집·전처리·분석·모델링</li>
+      <li data-i18n="exp10">초기(2019.11~2020): 한국어 의료 NLP — 증상 추출 및 의료 텍스트 분류</li>
+    </ul>
+    <div class="chips"><span class="chip">Python</span><span class="chip">Open-weight LLMs</span><span class="chip">LoRA · DPO/GRPO</span><span class="chip">GPTQ · AWQ · W4A16</span><span class="chip">vLLM</span><span class="chip">FastAPI</span><span class="chip">On-prem</span></div>
+  </div>
+</section>
+
+<section>
+  <h2 data-i18n="proj_h">프로젝트</h2>
+  <div class="job">
+    <h3 data-i18n="p2t">QR 영수증 상품권 (사이드 프로젝트)</h3>
+    <div class="meta" data-i18n="p2m">2026년 ~ 현재</div>
+    <p class="win" data-i18n="p2w">가맹점에서 상품권 환급을 처리하는 웹 서비스. 고객이 매장에서 QR을 찍고 영수증 사진을 올리면 금액·영수증 번호를 읽어 환급 등급을 정하고, 발급 내역을 기록하고, 중복 청구를 막는다. 관리자 화면에서 환급액 설정·기록 관리.</p>
+    <ul>
+      <li data-i18n="p2l1"><b>2026년 상용 출시, 가맹점에서 실제 사용 중</b></li>
+      <li data-i18n="p2l2"><b>1인 풀스택</b> 개발·운영 — 기획, 개발, CI(GitHub Actions), 무중단 AWS 배포</li>
+    </ul>
+    <div class="chips"><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">PostgreSQL</span><span class="chip">AWS</span><span class="chip">Docker</span></div>
+  </div>
+  <div class="job">
+    <h3 data-i18n="p1t">뷰티/헬스 AI 제품 (사이드 프로젝트)</h3>
+    <div class="meta" data-i18n="p1m">2025년 9월 ~ 현재</div>
+    <p class="win" data-i18n="p1w">뷰티/헬스 AI 제품 개발 리드 — 실시간 음성 어시스턴트, 두피/피부 진단 CV, 온디바이스 숏폼 자동생성을 실제 출시. 스펙·리뷰는 직접, 구현의 대부분은 <b>AI 코딩 에이전트</b>로 진행.</p>
+    <ul>
+      <li data-i18n="p1l1">실시간 <b>앰비언트 음성 어시스턴트</b> — 실시간 STT/번역, 문장 경계·엔드포인트 튜닝</li>
+      <li data-i18n="p1l2"><b>두피 진단 CV</b> — 공개 벤치마크 재현 후 추월(macro-F1 <span class="hl">0.744</span> vs 0.689)</li>
+      <li data-i18n="p1l3"><b>얼굴 피부 진단(8개 속성)</b> — 속성별 순서형 등급 모델. 배포 MAE <b>~0.49</b>, <b>±1등급 이내 ~94%</b></li>
+      <li data-i18n="p1l4">학습·추론 전처리 정합으로 배포 정확도 개선 → <b>온디바이스 8개 모델</b> 출시</li>
+      <li data-i18n="p1l5"><b>온디바이스 숏폼 자동생성·렌더링</b> — 생성 진행 UI, 동적 편집(페이드아웃, 정지프레임 트림, 구간 클램핑), 배경음악, 세션 유지</li>
+    </ul>
+    <div class="chips"><span class="chip">AI agents</span><span class="chip">real-time voice</span><span class="chip">PyTorch</span><span class="chip">ffmpeg</span></div>
+  </div>
+  <div class="job">
+    <h3 data-i18n="p3t">대화형 AI 서비스 (사이드 프로젝트)</h3>
+    <div class="meta" data-i18n="p3m">2023년 5월 ~ 2024년 1월 · 9개월</div>
+    <p class="win" data-i18n="p3w">멀티모달 대화형 AI 서비스의 AI/ML 엔지니어 — 감정분석, 음성/영상 생성, NLP 툴링 등 AI 기능 개발·출시.</p>
+    <ul>
+      <li data-i18n="p3l1"><b>감정 분류기</b> — 직접 ~1,500건 라벨링, 7-class, <span class="hl">CPU 추론 0.06초</span>. 하이퍼파라미터 탐색</li>
+      <li data-i18n="p3l2"><b>멀티모달 AI</b> — TTS/음성 클로닝, 토킹헤드 영상, 이미지 캡셔닝, 음성 향상, 이미지 생성(API 연동+튜닝)</li>
+      <li data-i18n="p3l3"><b>NLP 툴링</b> — 임베딩 유사도 기반 반복 회피, 비속어/텍스트 모더레이션, 문장 분리</li>
+      <li data-i18n="p3l4">다단계 캐릭터 생성 프롬프트 엔지니어링. 클로즈드 베타(100명) 데이터 분석. 서비스 전체 QA·출시 테스트</li>
+    </ul>
+    <div class="chips"><span class="chip">NLP</span><span class="chip">multi-modal AI</span><span class="chip">prompt engineering</span><span class="chip">data labeling</span><span class="chip">QA</span></div>
+  </div>
+</section>
+
+<section>
+  <h2 data-i18n="comp_h">수상 · 컴페티션 (개인)</h2>
+  <div class="job">
+    <div class="kg"><h3 data-i18n="kg_t">Kaggle Competitions Expert</h3><span class="rank" data-i18n="kg_r">전 세계 상위 0.2%</span></div>
+    <ul>
+      <li data-i18n="c1"><b>Kaggle AI Agent Security (OpenAI) — 🥇 13위</b>(2026년 9월). 커널 전용 레드팀 벤치마크. 공개 보드는 마커 탈취 경쟁이었으나 프라이빗에서 해당 계열이 무효화. EXFIL 노트북 1개 + confused-deputy 노트북 1개(2개 중 상위 득점)로 헤지 — 공개 ~117위 → 🥇 프라이빗 13위.</li>
+      <li data-i18n="c2"><b>Kaggle 수학문제 분류 — 3위</b>(2025년 5월). 생성형 분류를 <b>constrained decoding</b>으로 재구성 — Logits Processor가 출력을 라벨 토큰으로 제한, temperature=0·max_tokens=1로 형식 오류 제거. <a href="https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution" target="_blank">→ 공식 3위 솔루션 라이트업</a></li>
+      <li data-i18n="c3"><b>Kaggle AIMO Progress Prize 2 — 🥈 은메달</b>(2025년 3월). 배치 추론용 추론 모델 파인튜닝·양자화. 엄격한 토큰 예산 안에서 다중 샘플 majority-vote self-consistency.</li>
+      <li data-i18n="c4"><b>Kaggle ARC Prize 2024 — 🥉 동메달</b>(2024년 11월). 미지의 태스크에 대한 추상 추론.</li>
+    </ul>
+  </div>
+  <div class="job">
+    <div class="kg"><h3 data-i18n="z_t">Zindi · FAO/ITU 위성 양식장 탐지</h3><span class="rank" data-i18n="z_r">13위</span></div>
+    <div class="meta" data-i18n="z_m">2026년 8월</div>
+    <ul><li data-i18n="z1">학습/테스트 간 도메인 차이가 커서 리더보드로 직접 검증: <b>테스트타임 자가학습</b>으로 공개 점수 <span class="hl">0.916 → 0.941</span> 향상. 순위보다 분산 기준으로 최종 제출을 골라 프라이빗 반전을 버팀.</li></ul>
+  </div>
+  <p class="meta" data-i18n="also">Eedi·Nemotron·Deep Past 등 LLM 추론 최적화 컴페티션에도 참가</p>
+  <div class="certs">
+    <figure><img src="assets/kaggle-gold-cert.jpg" alt="Kaggle 금메달 인증서 — AI Agent Security (OpenAI)" loading="lazy"><figcaption data-i18n="fig1">Kaggle — AI Agent Security (OpenAI), 🥇 금메달 · 4,186팀 중 13위</figcaption></figure>
+    <figure><a href="assets/kac-cert.pdf" target="_blank"><img src="assets/kac-cert.jpg" alt="KAUST Academy 인증서" loading="lazy"></a><figcaption data-i18n="fig2">KAUST Academy — 수학문제 분류, 3위</figcaption></figure>
+    <figure><img src="assets/aimo2-silver.jpg" alt="Kaggle AIMO2 은메달" loading="lazy"><figcaption data-i18n="fig3">Kaggle — AIMO Progress Prize 2, 🥈 은메달</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2 data-i18n="skill_h">기술 스택</h2>
+  <div class="skillrow"><b data-i18n="sk1l">언어</b><span data-i18n="sk1t">Python</span></div>
+  <div class="skillrow"><b>LLM / GenAI</b><span data-i18n="sk2t">파인튜닝·학습(SFT·LoRA), RL(DPO/GRPO) 경험, 양자화(GPTQ/AWQ/W4A16), vLLM 서빙·온프레미스 배포, 구조화(JSON) 출력 수정, RAG·검색(임베딩 검색·리랭킹)</span></div>
+  <div class="skillrow"><b data-i18n="sk3l">NLP / CV / 데이터</b><span data-i18n="sk3t">한국어 의료 텍스트 처리/분류 · PyTorch 이미지분류 모델 학습·논문 재현 · 데이터 분석(pandas)·라벨링</span></div>
+  <div class="skillrow"><b data-i18n="sk4l">서빙 / 인프라</b><span data-i18n="sk4t">vLLM·FastAPI, Docker, Kubernetes, <b>온프레미스(폐쇄망) GPU 서빙</b>, W&amp;B</span></div>
+  <div class="skillrow"><b data-i18n="sk5l">AI 에이전트</b><span data-i18n="sk5t"><b>AI 코딩 에이전트(Claude, GPT/Codex) 활용</b> — 스펙·아키텍처·리뷰·검증은 직접, 대규모 구현은 에이전트로 진행. (퍼즐에이아이 초기/중기 코드, 캐글 솔루션, 데이터 라벨링·모델 학습은 전부 직접 했다.)</span></div>
+</section>
+
+<section>
+  <h2 data-i18n="comm_h">커뮤니티 · 리더십</h2>
+  <div class="job">
+    <h3><span data-i18n="comm_t">learnup 스터디 — 운영자/리더</span> <span style="font-weight:400;color:var(--mut);font-size:14px" data-i18n="comm_t2">· 소모임 앱</span></h3>
+    <div class="meta" data-i18n="comm_m">2025년 2월 ~ 2026년 4월 · 1주년 2026년 1월 30일</div>
+    <ul><li data-i18n="comm1">50명 이상 규모를 1년 넘게 유지. 평일 퇴근 후 카페 오프라인 데일리 모임 — 일정·장소·진행 운영</li></ul>
+  </div>
+</section>
+
+<section>
+  <h2 data-i18n="link_h">링크</h2>
+  <div class="skillrow"><b>Kaggle</b><span><a href="https://www.kaggle.com/aleaiest" target="_blank">kaggle.com/aleaiest</a></span></div>
+  <div class="skillrow"><b>Zindi</b><span><a href="https://zindi.africa/users/Foreist" target="_blank">zindi.africa/users/Foreist</a></span></div>
+  <div class="skillrow"><b>Hugging Face</b><span><a href="https://huggingface.co/qwertist" target="_blank">huggingface.co/qwertist</a></span></div>
+  <div class="skillrow"><b data-i18n="link_l4">이메일</b><span><a href="mailto:dxodnd@gmail.com">dxodnd@gmail.com</a></span></div>
+  <div class="skillrow"><b data-i18n="rl_l">이력서 md</b><span data-i18n="rl_t"><a href="resume.md">한국어</a> · <a href="resume.en.md">English</a></span></div>
+</section>
+
+</main>
+<footer data-i18n="footer">© 2026 김태웅 · AI/NLP 연구자</footer>
+<script>
+var EN = {
+skip: "Skip to main content",
+kicker: "AI / NLP Researcher \u00B7 Medical LLM",
+name: "Kim Taewoong",
+name_en: "\uae40\ud0dc\uc6c5",
+role: "Medical LLM (Generative Medical Record) \u2014 research & on-prem serving",
+badge: "\ud83c\udfc5 Kaggle Competitions Expert \u00B7 top 0.2% worldwide \u00B7 \ud83e\udd47 1 \u00B7 \ud83e\udd48 1 \u00B7 \ud83e\udd49 1",
+print: "Print / save PDF",
+s1b: "100+",
+s1s: "concurrent users on-prem",
+s2b: "top 0.2%",
+s2s: "Kaggle Competitions Expert",
+s3b: "\ud83e\udd47 1 \u00B7 \ud83e\udd48 1 \u00B7 \ud83e\udd49 1",
+s3s: "Kaggle competition medals",
+sum_h: "Summary",
+sum1: "<b>On-premise medical LLM serving inside hospital closed networks \u2014 100+ concurrent users (self-hosted GPU).</b>",
+sum2: "End-to-end LLM: fine-tuning (SFT\u00B7LoRA, RL: DPO/GRPO), quantization (GPTQ/AWQ/W4A16), vLLM serving; fine-tuned open-weight LLMs up to 100B+ parameters.",
+sum3: "Kaggle Competitions Expert (<span class=\"hl\">top 0.2%</span> worldwide)<ul><li>OpenAI AI Agent Security <span class=\"hl\">\ud83e\udd47 Gold</span></li><li>Math-problem classification <span class=\"hl\">3rd</span></li><li>AIMO Progress Prize 2 <span class=\"hl\">\ud83e\udd48 Silver</span></li><li>ARC Prize 2024 <span class=\"hl\">\ud83e\udd49 Bronze</span></li><li>Zindi \u00B7 FAO/ITU satellite pond detection <span class=\"hl\">13th</span></li></ul>",
+exp_h: "Experience",
+exp_title: "Puzzle AI \u2014 AI / NLP Researcher",
+exp_meta: "Nov 2019 \u2013 Sep 2026 \u00B7 6 yrs 10 mo",
+exp_win: "Owns training, quantization and <span class=\"hl\">on-premise serving</span> of a medical LLM (Generative Medical Record) \u2014 <span class=\"hl\">100+ concurrent users, deployed inside hospital closed networks</span>.",
+exp1: "<b>On-prem serving</b> \u2014 LLM on hospital closed-network / self-hosted GPU, <b>redundant dual-server setup for 100+ concurrent users</b>",
+exp2: "Fine-tuning open-weight LLMs up to <b>100B+ parameters</b> (LoRA, RL: DPO/GRPO); multi-GPU distributed training; sized serving configurations to the available GPU budget",
+exp3: "Quantization (GPTQ/AWQ/W4A16) for speed & VRAM \u2014 built an AWQ recipe for a model family with no published recipe, ~2.5\u00D7 faster inference",
+exp4: "vLLM serving & reproducibility debugging; stabilized structured (JSON) output via GBNF constrained decoding.",
+exp5: "Clinical-document summarization backend \u2014 long-document handling and repetition control, standardized error-code spec",
+exp6: "Hospital record pipelines \u2014 fine-tuned an LLM on real records, on-prem; on-site demos",
+exp7: "<b>Introduced & established vLLM</b> as the team\u2019s LLM serving stack (structured output, serving image, quantized serving); upgraded embedding & reranker models (separate KO/EN embeddings) for retrieval quality",
+exp8: "<b>CDSS with a small LLM</b> (2023.10\u20132024.12) \u2014 clinical decision support for hospital use: generated & labeled training data with GPT, fine-tuned an open LLM, converted for on-prem deployment",
+exp9: "<b>Precision-medicine R&D</b> (2020.11\u20132023.02, university-hospital collaboration) \u2014 blood-cancer mutation research: literature survey, data collection, preprocessing, analysis and modeling",
+exp10: "Earlier (2019.11\u20132020): Korean medical NLP \u2014 symptom extraction and medical text classification",
+proj_h: "Projects",
+p1t: "Beauty / Health AI Product (side project)",
+p1m: "Sep 2025 \u2013 present",
+p1w: "Drove development of a beauty/health AI product \u2014 shipped features like a real-time voice assistant, scalp/skin-diagnosis CV, and on-device shorts auto-generation; owned spec & review while <b>AI coding agents</b> did most of the implementation.",
+p1l1: "Real-time <b>ambient voice assistant</b> \u2014 live STT / translation, sentence-boundary & endpoint tuning",
+p1l2: "<b>Scalp diagnosis CV</b> \u2014 reproduced a published benchmark and beat it (macro-F1 <span class=\"hl\">0.744</span> vs 0.689)",
+p1l3: "<b>Facial skin diagnosis (8 attributes)</b> \u2014 per-attribute ordinal-grading models; deployment MAE <b>~0.49</b>, <b>~94% within \u00B11 grade</b>",
+p1l4: "Tuned train/inference preprocessing for deployment accuracy \u2192 shipped <b>8 models on-device</b>",
+p1l5: "<b>On-device shorts auto-generation & rendering</b> \u2014 generation-progress UI, dynamic editing (fade-out, frozen-frame trim, segment clamping), background music, session persistence",
+p2t: "QR Receipt Voucher (side project)",
+p2m: "2026 \u2013 present",
+p2w: "A web service that handles gift-certificate refunds at participating stores. Customers scan a QR code in the store and upload a receipt photo; the service reads the amount and receipt number, decides the refund tier, records the issuance, and blocks duplicate claims. An admin view sets refund amounts and manages records.",
+p2l1: "<b>Launched commercially in 2026 and currently in live use</b> at participating stores",
+p2l2: "Built and operated <b>solo, end to end</b> \u2014 product, development, CI (GitHub Actions), and zero-downtime AWS deployment",
+p3t: "Conversational AI Service (side project)",
+p3m: "May 2023 \u2013 Jan 2024 \u00B7 9 mo",
+p3w: "AI / ML engineer on a multi-modal conversational AI service \u2014 built and shipped AI features (emotion analysis, voice / video generation, NLP tooling).",
+p3l1: "<b>Emotion classifier</b> \u2014 hand-labeled ~1,500 samples myself, 7-class, <span class=\"hl\">0.06 s CPU inference</span>; hyperparameter search",
+p3l2: "<b>Multi-modal AI</b> \u2014 TTS / voice-cloning, talking-head video, image captioning, speech enhancement, image generation (API integration + tuning)",
+p3l3: "<b>NLP tooling</b> \u2014 repetition avoidance via embedding similarity, profanity / text moderation, sentence splitting",
+p3l4: "Multi-stage character-creation prompt engineering; closed beta (100 users) data analysis; end-to-end service QA & release testing",
+comp_h: "Competitions (solo)",
+kg_t: "Kaggle Competitions Expert",
+kg_r: "top 0.2% worldwide",
+c1: "<b>Kaggle AI Agent Security (OpenAI) \u2014 \ud83e\udd47 13th</b> (Sep 2026). Kernels-only red-team benchmark. Public board was a marker-exfiltration race; private zeroed that family. Selected one EXFIL notebook and one confused-deputy notebook (max-of-two) so the hedge survived \u2014 public ~117th \u2192 \ud83e\udd47 private 13th.",
+c2: "<b>Kaggle math-problem classification \u2014 3rd place</b> (May 2025). Reframed generative classification as <b>constrained decoding</b> \u2014 a Logits Processor restricts output to label tokens, temperature=0 \u00B7 max_tokens=1, eliminating format errors. <a href=\"https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution\" target=\"_blank\">\u2192 Official 3rd-place solution writeup</a>",
+c3: "<b>Kaggle AIMO Progress Prize 2 \u2014 \ud83e\udd48 Silver</b> (Mar 2025). Fine-tuned and quantized a reasoning model for batch inference; multi-sample majority-vote self-consistency under a strict token budget.",
+c4: "<b>Kaggle ARC Prize 2024 \u2014 \ud83e\udd49 Bronze</b> (Nov 2024). Abstract reasoning on unseen tasks.",
+z_t: "Zindi \u00B7 FAO/ITU satellite aquaculture-pond detection",
+z_r: "13th",
+z_m: "Aug 2026",
+z1: "Heavy domain shift between train and test, so I validated directly on the leaderboard: <b>test-time self-training</b> raised the public score <span class=\"hl\">0.916 \u2192 0.941</span>, and picking final submissions for variance rather than rank survived the private shakeup.",
+also: "Also participated in Eedi \u00B7 Nemotron \u00B7 Deep Past and other LLM inference-optimization competitions",
+fig1: "Kaggle \u2014 AI Agent Security (OpenAI), \ud83e\udd47 Gold \u00B7 13th of 4,186 teams",
+fig2: "KAUST Academy \u2014 math-problem classification, 3rd place",
+fig3: "Kaggle \u2014 AIMO Progress Prize 2, \ud83e\udd48 Silver",
+skill_h: "Skills",
+sk1l: "Language",
+sk1t: "Python",
+sk2t: "Fine-tuning & training (SFT\u00B7LoRA), RL (DPO/GRPO) experience, quantization (GPTQ/AWQ/W4A16), vLLM serving & on-prem deployment, structured (JSON) output fixes, RAG \u00B7 retrieval (embedding search \u00B7 reranking)",
+sk3l: "NLP / CV / Data",
+sk3t: "Korean medical text processing/classification \u00B7 PyTorch image-classification model training & paper reproduction \u00B7 data analysis (pandas) & labeling",
+sk4l: "Serving / Infra",
+sk4t: "vLLM \u00B7 FastAPI, Docker, Kubernetes, <b>on-prem (closed-network) GPU serving</b>, W&B",
+sk5l: "AI agents",
+sk5t: "<b>Highly proficient with AI coding agents (Claude, GPT/Codex)</b> \u2014 drives large-scale implementation via agents while owning spec, architecture, review & verification. (Puzzle AI early/mid code, Kaggle solutions, data labeling & model training are all done by hand.)",
+comm_h: "Community \u00B7 Leadership",
+comm_t: "learnup study group \u2014 Organizer/Leader",
+comm_t2: "\u00B7 Somoim app",
+comm_m: "Feb 2025 \u2013 Apr 2026 \u00B7 1-year milestone Jan 30, 2026",
+comm1: "Grew and sustained a 50+ member group for over a year; ran daily in-person meetups (after-work cafe), owning scheduling, venue & facilitation",
+link_h: "Links",
+link_l4: "Email",
+rl_l: "Resume md",
+rl_t: "<a href=\"resume.md\">Korean</a> \u00B7 <a href=\"resume.en.md\">English</a>",
+footer: "\u00A9 2026 Kim Taewoong \u00B7 AI/NLP Researcher"
+};
+var KO = {};
+document.querySelectorAll('[data-i18n]').forEach(function(el){ KO[el.getAttribute('data-i18n')] = el.innerHTML; });
+function setLang(l){
+  var D = (l === 'en') ? EN : KO;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var v = D[el.getAttribute('data-i18n')];
+    if (v != null) el.innerHTML = v;
+  });
+  document.documentElement.lang = l;
+  document.title = (l === 'en') ? 'Kim Taewoong \u00B7 AI/NLP Researcher' : '\uae40\ud0dc\uc6c5 \u00B7 AI/NLP \uc5f0\uad6c\uc790';
+  var md = document.querySelector('meta[name="description"]');
+  if (md) md.setAttribute('content', (l === 'en')
+    ? 'AI/NLP researcher. On-prem medical LLM serving (100+ concurrent users, hospital closed network). Kaggle Competitions Expert (top 0.2%).'
+    : 'AI/NLP \uc5f0\uad6c\uc790. \uc628\ud504\ub808\ubbf8\uc2a4 \uc758\ub8cc LLM \uc11c\ube59(\ub3d9\uc2dc\uc811\uc18d 100\uba85 \uc774\uc0c1, \ubcd1\uc6d0 \ud3d0\uc1c4\ub9dd). Kaggle Competitions Expert(\uc0c1\uc704 0.2%).');
+  var koBtn = document.getElementById('btn-ko');
+  var enBtn = document.getElementById('btn-en');
+  koBtn.className = (l === 'ko') ? 'on' : '';
+  enBtn.className = (l === 'en') ? 'on' : '';
+  koBtn.setAttribute('aria-pressed', String(l === 'ko'));
+  enBtn.setAttribute('aria-pressed', String(l === 'en'));
+  try { localStorage.setItem('site-lang', l); } catch (e) {}
+}
+(function(){
+  var l = 'ko';
+  try { l = localStorage.getItem('site-lang') || 'ko'; } catch (e) {}
+  var q = null;
+  try { q = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+  if (q === 'en' || q === 'ko') l = q;
+  setLang(l);
+})();
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex, nofollow">
+<title>김태웅 · AI/NLP 연구자</title>
+<meta name="description" content="AI/NLP 연구자. 온프레미스 의료 LLM 서빙(동시접속 100명 이상, 병원 폐쇄망). Kaggle Competitions Expert(상위 0.2%).">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="김태웅 · AI/NLP 연구자">
+<meta property="og:description" content="온프레미스 의료 LLM 서빙(동시접속 100명 이상). Kaggle Competitions Expert(상위 0.2%). OpenAI agent-security 🥇 금메달.">
+<meta property="og:image" content="https://foreist.github.io/assets/profile.jpg">
+<meta property="og:url" content="https://foreist.github.io/">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+<style>
+  :root{
+    color-scheme:light dark;
+    --accent:#4f46e5;--accent:light-dark(#4f46e5,#a5b4fc);
+    --accent-soft:#eef2ff;--accent-soft:light-dark(#eef2ff,#312e81);
     --body:#f1f1f1;--body:light-dark(#f1f1f1,#0f0f10);
     --surface:#ffffff;--surface:light-dark(#ffffff,#1b1b1c);
     --fg:#171717;--fg:light-dark(#171717,#ededed);
