@@ -1,7 +1,7 @@
 # 김태웅 (Kim Taewoong) · AI / NLP 연구자
 
 **의료 LLM 학습·양자화·온프레미스 서빙 · 퍼즐에이아이 2019.11 ~ 2026.09**
-**Kaggle 상위 0.2%** (411 / 212,647) · 대회 메달 🥇 2 · 🥈 1 · 🥉 1
+**Kaggle 상위 0.2%** · 대회 메달 🥇 2 · 🥈 1 · 🥉 1
 
 > English version: [resume.en.md](resume.en.md)
 
@@ -67,7 +67,7 @@
 
 ## 수상 · 컴페티션 (개인)
 
-**Kaggle 상위 0.2%** (411 / 212,647)
+**Kaggle 상위 0.2%**
 
 - **AI Agent Security (OpenAI) · 금메달, 4,186팀 중 13위** (2026.09). LLM 에이전트 레드팀 벤치마크. 공개 리더보드 상위 공격 유형이 최종 채점에서 무효화될 가능성에 대비해 서로 다른 공격 전략 2개로 제출을 나눔. 공개 약 117위에서 최종 13위
 - **수학문제 분류 (KAUST Academy) · 3위** (2025.05). 생성형 분류를 제약 디코딩으로 바꿔 라벨 토큰만 출력하게 해 형식 오류 제거. [3위 솔루션 라이트업](https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution)

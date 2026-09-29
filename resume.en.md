@@ -1,7 +1,7 @@
 # Kim Taewoong (김태웅) · AI / NLP Researcher
 
 **Medical LLM training, quantization, and on-prem serving · Puzzle AI, Nov 2019 – Sep 2026**
-**Kaggle top 0.2%** (411 / 212,647) · Competition medals 🥇 2 · 🥈 1 · 🥉 1
+**Kaggle top 0.2%** · Competition medals 🥇 2 · 🥈 1 · 🥉 1
 
 > 한국어 버전: [resume.md](resume.md)
 
@@ -67,7 +67,7 @@ AI/ML engineer on a multimodal conversational AI service. Built and shipped emot
 
 ## Competitions (solo)
 
-**Kaggle top 0.2%** (411 / 212,647)
+**Kaggle top 0.2%**
 
 - **AI Agent Security (OpenAI) · Gold, 13th of 4,186 teams** (Sep 2026). LLM-agent red-team benchmark. Split final submissions across two different attack strategies in case the public leaderboard's top attack type was invalidated in final scoring. Public ~117th to final 13th
 - **Math-problem classification (KAUST Academy) · 3rd** (May 2025). Reframed generative classification as constrained decoding so the model can only emit label tokens, eliminating format errors. [3rd-place solution writeup](https://www.kaggle.com/competitions/classification-of-math-problems-by-kasut-academy/writeups/3rd-place-solution)
