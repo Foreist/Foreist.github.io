@@ -73,7 +73,7 @@ AI/ML engineer on a multimodal conversational AI service. Built and shipped emot
 - **AIMO Progress Prize 2 · Silver** (Mar 2025). Fine-tuned and quantized a reasoning model; multi-sample majority vote within a token budget
 - **ARC Prize 2024 · Bronze** (Nov 2024). Abstract reasoning on unseen tasks
 
-**Zindi · FAO/ITU satellite aquaculture-pond detection · 13th** (Aug 2026). Large train/test domain gap, so applied test-time self-training: public score 0.916 → 0.941. Chose lower-variance final submissions to hold up in the private ranking
+**Zindi · FAO/ITU satellite aquaculture-pond detection · 9th of 604 teams** (Aug 2026). Large train/test domain gap, so applied test-time self-training: public score 0.916 → 0.941. Chose lower-variance final submissions to hold up in the private ranking
 
 ---
 
