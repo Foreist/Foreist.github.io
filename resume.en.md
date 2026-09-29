@@ -12,6 +12,7 @@
 - Deployed a medical LLM on GPU servers inside hospital closed networks, serving **100+ concurrent users**
 - Full LLM pipeline from fine-tuning 100B+ open-weight models to quantization and vLLM serving
 - Built a QR receipt-voucher service solo; **launched commercially in 2026 and in live operation**
+- Zindi GeoAI aquaculture-pond detection **gold** (9th place)
 - Kaggle top 0.2%: AI Agent Security **gold** (13th of 4,186 teams), math-problem classification **3rd**, AIMO Progress Prize 2 **silver**, ARC Prize 2024 **bronze**
 
 ---
@@ -73,7 +74,7 @@ AI/ML engineer on a multimodal conversational AI service. Built and shipped emot
 - **AIMO Progress Prize 2 · Silver** (Mar 2025). Fine-tuned and quantized a reasoning model; multi-sample majority vote within a token budget
 - **ARC Prize 2024 · Bronze** (Nov 2024). Abstract reasoning on unseen tasks
 
-**Zindi · FAO/ITU satellite aquaculture-pond detection · 9th of 604 teams** (Aug 2026). Large train/test domain gap, so applied test-time self-training: public score 0.916 → 0.941. Chose lower-variance final submissions to hold up in the private ranking
+**Zindi GeoAI aquaculture-pond detection (FAO/ITU) · Gold, 9th place** (Aug 2026). Large train/test domain gap, so applied test-time self-training: public score 0.916 → 0.941. Chose lower-variance final submissions to hold up in the private ranking
 
 ---
 
