@@ -1,7 +1,7 @@
 # Kim Taewoong (김태웅) · AI / NLP Researcher
 
 **Medical LLM training, quantization, and on-prem serving · Puzzle AI, Nov 2019 – Sep 2026**
-**Kaggle top 0.2%** (411 / 212,647) · 🥇 1 · 🥈 1 · 🥉 1
+**Kaggle top 0.2%** (411 / 212,647) · Competition medals 🥇 2 · 🥈 1 · 🥉 1
 
 > 한국어 버전: [resume.md](resume.md)
 

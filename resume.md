@@ -1,7 +1,7 @@
 # 김태웅 (Kim Taewoong) · AI / NLP 연구자
 
 **의료 LLM 학습·양자화·온프레미스 서빙 · 퍼즐에이아이 2019.11 ~ 2026.09**
-**Kaggle 상위 0.2%** (411 / 212,647) · 🥇 1 · 🥈 1 · 🥉 1
+**Kaggle 상위 0.2%** (411 / 212,647) · 대회 메달 🥇 2 · 🥈 1 · 🥉 1
 
 > English version: [resume.en.md](resume.en.md)
 
